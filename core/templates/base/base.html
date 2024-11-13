@@ -1,0 +1,51 @@
+{% load static %}
+{% load cache %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="fa" dir="{% if LANGUAGE_CODE == 'fa' %}rtl{% elif LANGUAGE_CODE == 'en' %}rtl{% else %}rtl{% endif %}">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    {% block header %}
+    {% endblock %}
+    {% include './css-files.html' %}
+</head>
+
+<body class="{% if LANGUAGE_CODE == 'fa' %}farsi{% elif LANGUAGE_CODE == 'en' %}english{% elif LANGUAGE_CODE == 'ar' %}arabi{% elif LANGUAGE_CODE == 'tr' %}turkey{% endif %}">
+<!-- Preloader -->
+  {% comment %} <div id="preloader">
+    <div id="ctn-preloader" class="ctn-preloader">
+      <div class="round_spinner">
+        <div class="spinner"></div>
+        <div class="text">
+          <img src="{% static 'img/logo.png' %}" alt="" />
+        </div>
+      </div>
+      <h2 class="head">Did You Know?</h2>
+      <p></p>
+    </div>
+  </div> {% endcomment %}
+  <div class="body_wrapper">
+    <div class="click_capture"></div>
+        {% include "partials/navbar.html" %}
+
+        {% block content %}
+        {% endblock %}
+
+
+        {% block sidebar %}
+        {% endblock %}
+
+
+    </div><!-- #main .wrapper -->
+    {% include 'partials/footer.html' %}
+</div><!-- #page -->
+
+</body>
+<footer>
+    {% include "./js-files.html" %}
+
+    {% block footer %}
+    {% endblock %}
+</footer>
+</html>

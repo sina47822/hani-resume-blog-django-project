@@ -1,0 +1,668 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load cache %}
+{% block header %}
+
+    <title>{{ SITE_NAME }} | {{ SITE_DESCRIPTION }}</title>
+    <meta name="description" content="{{ SITE_SEO_DESCRIPTION }}"/>
+    <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="og:title" content="{{ SITE_NAME }}"/>
+    <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta property="og:url" content="{{ SITE_BASE_URL }}"/>
+    <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+{% endblock %}
+{% block content %}
+    <!-- Banner Section -->
+    <section class="banner-area-4">
+      <div class="container" style="margin-top:50px">
+          <div class="row align-items-center">
+              <div class="col-xl-9 col-lg-9">
+                  <div class="banner-content banner-content-typing">
+                      <small class="wow fadeInUp banner-subtitle">{% translate "به وبسایت من، هانی ادیب آزاد خوش آمدید." %} {{ SITE_NAME }}</small>
+                      <h1 class="cd-headline clip home-headline">{% translate "این سایت تاسیس شده برای" %}
+                          <small class="cd-words-wrapper single-headline">
+                              <span class="is-visible"><b>{% translate "کوچینگ" %}</b> {% translate "کسب و کارها" %} </span>
+                              <span class="is-hidden"> <b>{% translate "کوچینگ" %}</b> {% translate "شخصی" %}</span>
+                              <span class="is-hidden"><b>{% translate "کوچینگ" %}</b> {% translate "ترکیب هردو" %} </span>
+                          </small>
+                      </h1>
+                      <p class="wow fadeInUp mt-30" data-wow-delay="0.5s">{{ SITE_DESCRIPTION }}</p>
+                      <div class="allfolio-btn-group">
+                          <a href="{% url 'website:contact'%}" class="theme-btn btn-big">{% translate "با من در ارتباط باشید" %}</a>
+                          <a href="{% url 'website:resume'%}" class="theme-btn theme-btn-outline-white btn-big">{% translate "دریافت رزومه" %}</a>
+                      </div>
+                      <div class="header_contact_info">
+                          <div class="item">
+                              <small class="label">{% translate "Email" %}</small>
+                              <a href="mailto:haniadibazad@gmail.com">haniadibazad@gmail.com</a>
+                          </div>
+                          <div class="item">
+                              <small class="label">{% translate "Phone" %}</small>
+                              <a href="tel:989122854353">09122844353</a>
+                          </div>
+                          <div class="item">
+                              <small class="label">{% translate "Location" %}</small>
+                              <p>{% translate "Iran, Tehran" %}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 d-lg-block">
+                  <div class="banner-img-two">
+                      <div class="shape wow slideInnew" data-wow-delay="0.7s">
+                          <img class="layer" data-depth="-0.15" src="{% static 'img/man2.png' %}" alt="">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <img src="{% static 'img/home_four/banner_text.png' %}" alt="" class="banner-shape wow fadeInRight" data-wow-delay="1s">
+    </section>
+    <!-- Banner Section -->
+    <section class="banner-area-2 banner-area-7" id="home">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-7 text-center text-lg-start">
+                <div class="banner-content">
+                    <h1 class="site-title wow fadeInUp"><a href="/" title="{{ SITE_NAME }}" rel="home">{{ SITE_NAME }}</a>
+                    </h1>
+                    <h2 class="site-description wow fadeInUp">{{ SITE_DESCRIPTION }}</h2>
+                <p class="mt-30 wow fadeinUp" data-wow-delay="0.5s">
+                    {% blocktranslate trimmed %}
+                    ساعت 4:15  بامداد از خواب بیدار می شدم تا بتونم 4:45 دقیقه با کمی پیاده روی به مسیر سرویس کارخانه برسم، یک جیپ قدیمی که من و تعدادی دیگر از کارگرها را در مسیر خودش سوار می کرد و ما رو بعد از بیش از یکساعت به حومه شهر می رسوند به کارگاه؛ قبل 6 بامداد و حدود طلوع خورشید می رسیدیم کارگاه و کار شروع می شد، بلافاصله بدون صرف حتا یک چای؛
+                    {% endblocktranslate%}
+
+                </p>
+                <div class="banner-btn wow fadeInUp" data-wow-delay="0.6s">
+                    <a href="{% url 'website:contact' %}" class="theme-btn theme-btn-outline btn-outline-black">{% translate 'درباره من، "هانی ادیب آزاد"' %}</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-5 text-md-end">
+                <div class="banner-right-content">
+                <div class="banner-img wow fadeInUp" data-wow-delay="0.6s">
+                    <img src="{% static 'img/about-us1.png' %}" alt="Image" />
+                    {% comment %} <img src="{% static 'img/about-us1.png' %}" alt="Shape" class="shape2 d-none d-md-block" /> {% endcomment %}
+                </div>
+                <div class="right-content">
+                    <p>
+                    {% blocktranslate trimmed %}
+                    “اون موقع ها از اینکه اخراج شده بودم خیلی ناراحت و تا حدودی خشمگین بودم اما حالا نه، سال هاست که دیگر ناراحت آن اخراج نیستم و از اینکه در آنجا پایبند نشدم خوشحالم.”
+                    {% endblocktranslate%}
+                    </p>
+                    <div class="signature text-end">
+                    <span>{% translate 'Hani AdibAzad' %}</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section -->
+
+    <!-- Service Section -->
+    <section class="service-area-2 position-relative section-padding-xl">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-9 col-lg-6 col-xl-5">
+            <div class="section-title wow fadeInUp">
+              <h2>{% translate "بخش خدمات" %}</h2>
+              
+              <p>
+                {% blocktranslate %}
+                کار ما اینجا همان کوچینگی است که این روزها بسیار مد شده و البته بسیاری هم به حق و نا حق کوچ و مربی و راهبر شده اند، من هم یکی از صدها، با این تفاوت که من اصول موفقیت در کسب و کار را تجربه کرده ام و گام به گام پیش رفتم و موفق شدم شرکتی رو بیش از 15 سال اداره کنم، تثبیت کنم و ارتقا بخشم. 
+                {% endblocktranslate %}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row gx-xl-60">
+          <div class="col-md-6 col-lg-4">
+            <div class="service service-item-2 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="service-icon">
+                <img src="{% static 'img/individual-coaching.png' %}" alt="Icon" />
+              </div>
+              <div class="service-title">
+                  <h3>{% translate "مشاوره کسب و کار فردی" %}</h3>
+              </div>
+              <p>
+                {% translate "این بخش مربوط همراهی، راهنمایی و مشاوره به افرادی ست که مایل هستند کسب و کار خودشان رو بسازند، شرایط کسب و کار خود را بهبود بدهند و یا حتی تفکر کسب و کار خود را تغییر بدهند. ..." %}
+              </p>
+                <a href="service.html" class="btn btn-white-100 btn-round">{% translate "مطالعه..." %}</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="service service-item-2 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="service-icon">
+                <img src="{% static 'img/team-coaching.png' %}" alt="Icon" />
+              </div>
+              <div class="service-title">
+                  <h3>{% translate "مشاوره تیم کسب و کار" %}</h3>
+              </div>
+                <p>
+                    {% translate "این بخش مربوط به همراهی، راهنمایی و مشاوره به تیم ها و شرکت ها ست که مایل هستند کسب و کار خودشان رو بسازند، ارتقا دهند، شرایط کسب و کار فعلی خود را بهبود بدهند و یا حتا تفکر کسب و کار خود را تغییر بدهند. ..." %}
+                </p>
+                <a href="service.html" class="btn btn-white-100 btn-round">{% translate "مطالعه..." %}</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="service service-item-2 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="service-icon">
+                <img src="{% static 'img/personal-coaching.png' %}" alt="Icon" />
+              </div>
+              <div class="service-title">
+                  <h3>{% translate "مشاوره اشخاص" %}</h3>
+              </div>
+              <p>
+                {% translate "این بخش مربوط به همراهی، راهنمایی و مشاوره به افرادی ست که مایل هستند کسب و کار خودشان رو بسازند، در دنیای کارمندی خودشون پیشرفت کنن و یا حتا شجاعت تغییر زمینه کاری خود را پیدا کنند و زندگی را به سمت آنچه که به آن علاقه مندند تغییر بدهند. ..." %}
+              </p>
+              <a href="service.html" class="btn btn-white-100 btn-round">{% translate "مطالعه..." %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Service Section -->
+
+    <!-- About Section -->
+    <section class="about-area-6 position-relative section-padding-xl bg-white-100">
+      <div class="container">
+        <div class="row align-content-center">
+          <div class="col-12 col-lg-6 col-xl-5">
+            <div class="about-left-content wow fadeInUp">
+              <h2>{% translate 'Jocelyn Culhane,' %} <br /><span>{% translate 'Psy.D' %}</span></h2>
+              <p class="pt-20">
+                {% blocktranslate trimmed %}
+                Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit
+                {% endblocktranslate %}
+              </p>
+              <p>
+                {% blocktranslate trimmed %}
+
+                Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor.
+                {% endblocktranslate %}
+              </p>
+              <a href="about.html" class="theme-btn">{% translate 'More About Me' %}</a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 offset-xl-1">
+            <div class="about-right-content">
+              <div class="row g-0">
+                <div class="col-sm-6 wow fadeInUp">
+                  <div class="about-counter-box bg-white">
+                    <h2 class="counter">150</h2>
+                    <div class="counter-title">
+                      <span>{% translate 'Passionate' %} <br />{% translate 'Providers' %}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                  <div class="about-counter-box">
+                    <div class="counter-logo">
+                      <img src="{% static 'img/logo3.png' %}" alt="Logo" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+                  <div class="about-counter-box">
+                    <h2><span class="counter">97</span>%</h2>
+                    <div class="counter-title">
+                      <span>{% translate 'Patient Visit' %} <br>{% translate 'Satisfaction Rating' %}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+                  <div class="about-counter-box bg-white">
+                    <h2><span class="counter">15</span></h2>
+                    <div class="counter-title">
+                      <span>{% translate 'Wellness Center' %} <br>{% translate 'Locations' %}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img src="{% static 'img/home_eight/shape/shape2.png' %}" alt="Shape" class="shape position-absolute top-0 wow fadeInDown"
+        data-wow-delay="0.5s" />
+    </section>
+    <!-- About Section -->
+
+    <!-- FAQs Section -->
+    <section class="faq-area position-relative section-padding-xl">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-xl-5 wow fadeInLeft">
+            <div class="faq-left-content">
+              <h2 class="mt-n12">{% translate "I Have Experience With…" %}</h2>
+              <div class="faq-image position-relative">
+                <img src="{% static 'img/home_eight/faq-image.png' %}" alt="{% translate "FAQ" %}" />
+                <div class="play-button">
+                  <a href="https://www.youtube.com/watch?v=CaimKeDcudo" data-fancybox>
+                    <i class="fas fa-play"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="col-md-6 col-xl-6 wow fadeInRight">
+          <div class="faq-right-content">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item faq-accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    {% translate "Teletherapy" %}
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse show"
+                  aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    {% blocktranslate trimmed %}
+                      We offer teletherapy services to individuals who are not able to meet us in our offices. In these
+                      sessions, we offer the same high levels of patient-confidentiality and creative personable
+                      engagement that we do in-person. We use technology to ensure that their experience is impactful,
+                      and convenient.
+                    {% endblocktranslate %}
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item faq-accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    {% translate "Individual Therapy" %}
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    {% blocktranslate trimmed %}
+                      We offer teletherapy services to individuals who are not able to meet us in our offices. In these
+                      sessions, we offer the same high levels of patient-confidentiality and creative personable
+                      engagement that we do in-person. We use technology to ensure that their experience is impactful,
+                      and convenient.
+                    {% endblocktranslate %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+    <!-- FAQs Section -->
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-area testimonial-area-8 bg-white-100 section-padding-xl">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title wow fadeInUp">
+              <h2 class="mt-n12">Testimonials</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-slider-active swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">Olga</span>
+              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
+              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
+                Center</span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
+                <span class="author-title">Zain Torff</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">Family S</span>
+              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
+              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
+                Center</span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author2.png' %}" alt="Image" class="author-img">
+                <span class="author-title">Madelyn Press</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">Karina</span>
+              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
+              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
+                Center</span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author3.png' %}" alt="Image" class="author-img">
+                <span class="author-title">Lincoln Levin</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">Olga</span>
+              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
+              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
+                Center</span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author4.png' %}" alt="Image" class="author-img">
+                <span class="author-title">Charlie Rhiel</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">Olga</span>
+              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
+              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
+                Center</span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
+                <span class="author-title">Zain Torff</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">Olga</span>
+              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
+              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
+                Center</span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
+                <span class="author-title">Zain Torff</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">Olga</span>
+              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
+              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
+                Center</span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
+                <span class="author-title">Zain Torff</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+
+    <!-- Timelines Section -->
+    <section class="timeline-area pt-105 pb-100">
+        <div class="container">
+            <div class="section-title text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h2>{% translate 'Education' %}</h2>
+            </div>
+            <div class="timeline-widget mt-70">
+                <div class="timeline-wrapper wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="timestamp">11.05.2013</div>
+                    <div class="timeline-panel">
+                        <h3>{% translate 'Davidson College' %}</h3>
+                        <span>{% translate 'North Carolina' %}</span>
+                        <p>{% blocktranslate trimmed %}Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In
+                            iaculis viverra neque, ac eleifend ante lobortis id. In viverra ipsum stie id viverra.{% endblocktranslate %}
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-wrapper timeline-inverted wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="timestamp">11.05.2013</div>
+                    <div class="timeline-panel">
+                        <h3>{% translate 'Davidson College' %}</h3>
+                        <span>{% translate 'North Carolina' %}</span>
+                        <p>{% blocktranslate trimmed %}Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In
+                            iaculis viverra neque, ac eleifend ante lobortis id. In viverra ipsum stie id viverra.{% endblocktranslate %}
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-wrapper wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="timestamp">11.05.2013</div>
+                    <div class="timeline-panel">
+                        <h3>{% translate 'Davidson College' %}</h3>
+                        <span>{% translate 'North Carolina' %}</span>
+                        <p>{% blocktranslate trimmed %}Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In
+                            iaculis viverra neque, ac eleifend ante lobortis id. In viverra ipsum stie id viverra.{% endblocktranslate %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Timelines Section -->
+
+    <!-- Book an Appointment Section -->
+    <section class="booking-area z-1 section-padding-xl pt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="booking-form wow fadeInLeft" data-wow-delay="0.2s">
+              <h2 class="mb-4 mt-n12">{% translate 'Book an Appointment' %}</h2>
+              <form action="#">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="name" class="form-label">{% translate 'Your name' %}</label>
+                      <input type="text" id="name" class="form-control" placeholder="Full Name">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="basicDate" class="form-label form-date">{% translate 'Date of Birth' %}</label>
+                      <div class="form-calender position-relative">
+                        <input type="text" class="form-control" id="basicDate" placeholder="MM/DD/YYYY" data-input>
+                        <div class="form-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M20.5 8H3.5M6 21H18C19.6569 21 21 19.6569 21 18V8C21 6.34315 19.6569 5 18 5H6C4.34315 5 3 6.34315 3 8V18C3 19.6569 4.34315 21 6 21Z"
+                              stroke="#747376" stroke-width="1.3" stroke-linecap="round" />
+                            <path d="M7.5 5V2.75" stroke="#747376" stroke-width="1.3" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M16.5 5V2.75" stroke="#747376" stroke-width="1.3" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path
+                              d="M8.25 17.5H6.75M8.25 14.5H6.75M8.25 11.5H6.75M12.75 17.5H11.25M12.75 14.5H11.25M12.75 11.5H11.25M17.25 17.5H15.75M17.25 14.5H15.75M17.25 11.5H15.75"
+                              stroke="#747376" stroke-width="1.3" stroke-linecap="round" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone" class="form-label">{% translate 'Phone Number' %}</label>
+                      <input type="text" id="phone" class="form-control" placeholder="33 (202) 123 4567">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="service" class="form-label">{% translate 'Type of Service' %}</label>
+                      <select id="service" class="select">
+                        <option data-display="Select service">{% translate 'Select service' %}</option>
+                        <option value="1">{% translate 'Some option' %}</option>
+                        <option value="2">{% translate 'Another option' %}</option>
+                        <option value="3" disabled>{% translate 'A disabled option' %}</option>
+                        <option value="4">{% translate 'Potato' %}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="availability" class="form-label">{% translate 'Availability' %}</label>
+                      <div class="form-calender position-relative">
+                        <input type="text" class="form-control" id="availability" placeholder="MM/DD/YYYY" data-input>
+                        <div class="form-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M20.5 8H3.5M6 21H18C19.6569 21 21 19.6569 21 18V8C21 6.34315 19.6569 5 18 5H6C4.34315 5 3 6.34315 3 8V18C3 19.6569 4.34315 21 6 21Z"
+                              stroke="#747376" stroke-width="1.3" stroke-linecap="round" />
+                            <path d="M7.5 5V2.75" stroke="#747376" stroke-width="1.3" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M16.5 5V2.75" stroke="#747376" stroke-width="1.3" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path
+                              d="M8.25 17.5H6.75M8.25 14.5H6.75M8.25 11.5H6.75M12.75 17.5H11.25M12.75 14.5H11.25M12.75 11.5H11.25M17.25 17.5H15.75M17.25 14.5H15.75M17.25 11.5H15.75"
+                              stroke="#747376" stroke-width="1.3" stroke-linecap="round" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <button class="theme-btn" type="submit">{% translate 'Check Availability' %}</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-5 offset-xl-1 wow fadeInRight" data-wow-delay="0.2s">
+            <div class="booking-right-content">
+              <ul class="contact-list">
+                <li class="contact-list-item">
+                  <div class="contact-icon">
+                    <svg width="20" height="32" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.35544 1.77641C2.48336 1.77641 1.77641 2.48336 1.77641 3.35544V28.6446C1.77641 29.5166 2.48336 30.2236 3.35544 30.2236H15.6916C16.5637 30.2236 17.2706 29.5166 17.2706 28.6446V3.35544C17.2706 2.48336 16.5637 1.77641 15.6916 1.77641H14.0827L13.5864 3.0171C13.4515 3.35431 13.1249 3.57543 12.7618 3.57543H6.28527C5.92208 3.57543 5.59548 3.35431 5.4606 3.0171L4.96432 1.77641H3.35544ZM6.87757 1.77641L6.88662 1.79902H12.1604L12.1695 1.77641H6.87757ZM0 3.35544C0 1.50228 1.50228 0 3.35544 0H15.6916C17.5448 0 19.047 1.50228 19.047 3.35544V28.6446C19.047 30.4977 17.5448 32 15.6916 32H3.35544C1.50228 32 0 30.4977 0 28.6446V3.35544Z"
+                        fill="#17161A" />
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <h5>{% translate 'Call' %}</h5>
+                    <p>(925)-481-9365</p>
+                  </div>
+                </li>
+                <li class="contact-list-item">
+                  <div class="contact-icon">
+                    <svg width="28px" height="28px" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1 2C0.447715 2 0 2.44772 0 3V12C0 12.5523 0.447715 13 1 13H14C14.5523 13 15 12.5523 15 12V3C15 2.44772 14.5523 2 14 2H1ZM1 3L14 3V3.92494C13.9174 3.92486 13.8338 3.94751 13.7589 3.99505L7.5 7.96703L1.24112 3.99505C1.16621 3.94751 1.0826 3.92486 1 3.92494V3ZM1 4.90797V12H14V4.90797L7.74112 8.87995C7.59394 8.97335 7.40606 8.97335 7.25888 8.87995L1 4.90797Z"
+                        fill="#000000" />
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <h5>{% translate 'Email' %}</h5>
+                    <a href="mailto:jocelyn@allfolio.com">jocelyn@allfolio.com</a>
+                  </div>
+                </li>
+                <li class="contact-list-item">
+                  <div class="contact-icon">
+                    <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.7772 2.07043C6.86403 2.07043 2.07043 6.86403 2.07043 12.7772C2.07043 16.7567 4.06977 20.5393 6.47635 23.6326C8.87009 26.7094 11.5718 28.9827 12.7689 29.923C12.7726 29.9259 12.7754 29.9276 12.7772 29.9286C12.7791 29.9276 12.7819 29.9259 12.7856 29.923C13.9827 28.9827 16.6844 26.7094 19.0781 23.6326C21.4847 20.5393 23.4841 16.7567 23.4841 12.7772C23.4841 6.86403 18.6905 2.07043 12.7772 2.07043ZM0 12.7772C0 5.72057 5.72057 0 12.7772 0C19.8339 0 25.5545 5.72057 25.5545 12.7772C25.5545 17.4276 23.2374 21.6582 20.7123 24.9039C18.1743 28.1662 15.3289 30.558 14.0646 31.5512C13.3028 32.1496 12.2517 32.1496 11.4899 31.5512C10.2255 30.558 7.38021 28.1662 4.84221 24.9039C2.31706 21.6582 0 17.4276 0 12.7772Z"
+                        fill="#17161A" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.7775 8.78015C10.5699 8.78015 8.78039 10.5697 8.78039 12.7772C8.78039 14.9848 10.5699 16.7743 12.7775 16.7743C14.985 16.7743 16.7746 14.9848 16.7746 12.7772C16.7746 10.5697 14.985 8.78015 12.7775 8.78015ZM6.70996 12.7772C6.70996 9.42624 9.42648 6.70972 12.7775 6.70972C16.1285 6.70972 18.845 9.42624 18.845 12.7772C18.845 16.1282 16.1285 18.8447 12.7775 18.8447C9.42648 18.8447 6.70996 16.1282 6.70996 12.7772Z"
+                        fill="#17161A" />
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <h5>{% translate 'Address' %}</h5>
+                    <p>{% translate '1234 Divi St. #100, San ' %}<br>{% translate 'Francisco, CA 93150' %}</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="working-hours">
+                <h3>{% translate 'Working Hours' %}</h3>
+                <ul class="working-hours-info">
+                  <li class="working-hours-item">
+                    <span>{% translate 'Monday – Friday :' %}</span>
+                    <span>{% translate '10am – 9pm' %}</span>
+                  </li>
+                  <li class="working-hours-item">
+                    <span>{% translate 'Saturday :' %}</span>
+                    <span>{% translate '10am – 3pm' %}</span>
+                  </li>
+                  <li class="working-hours-item">
+                    <span>{% translate 'Sunday :' %}</span>
+                    <span>{% translate '2pm – 9pm' %}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Book an Appointment Section -->
+
+    <!-- CTA Section -->
+    <section class="cta-area-3 cta-area-4 position-relative section-padding-xl z-1 pb-0 ms-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title section-tag mb-45">
+              <h2 class="title-text">{% translate "Let's start something" %} <br>{% translate 'completely new together' %}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <div class="col-md-6 col-lg-8">
+            <div class="section-title section-tag">
+              <p class="cta-text">{% blocktranslate trimmed %}
+                Drop us a line, and we'll get in touch. {% endblocktranslate %}<br>
+                {% blocktranslate trimmed %} We'll see if we're a match and how we can help each other.{% endblocktranslate %}</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="cta-btn-wrapper">
+              <a href="contact.html" class="theme-btn">{% translate 'Contact Us' %} <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-4">
+            <div class="cta-info">
+              <span>{% translate 'E-MAIL' %}</span>
+              <a href="mailto:hello@allfolio.com">{% translate 'hello@allfolio.com' %}</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cta-info">
+              <span>{% translate 'PHONE NUMBER' %}</span>
+              <a href="tel:1234567890">+123 456 7890</a>
+            </div>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <div class="footer-img">
+              <img src="{% static 'img/logo.png' %}" alt="Image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+  </div>
+<div>
+    <h2>{% translate 'Featured Articles' %}</h2>
+    <ul>
+        {% for article in posts %}
+            <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -15,8 +15,35 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static
 
+from django.conf.urls import handler400,handler403, handler404, handler500
+
+from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.i18n import set_language
+
+from django.contrib.sitemaps.views import sitemap
+from website.sitemaps import StaticViewSitemap
+sitemaps = {
+    'static': StaticViewSitemap,
+}
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('tarjome', include('rosetta.urls')),
+    path('tinymce/', include('tinymce.urls')),
+    path('robots.txt', include('robots.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
+    path('', include(('website.urls' , 'website'), namespace= 'website')),
+    path('posts/', include(('blog.urls' , 'blog'), namespace= 'blog')),
 ]
+handler400 = 'website.views.handler_400'
+handler403 = 'website.views.handler_403'
+handler404 = 'website.views.handler_404'
+handler500 = 'website.views.handler_500'
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

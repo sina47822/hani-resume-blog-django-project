@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load cache %}
+{% block header %}
+
+    <title>Resume</title>
+    <meta name="description" content="{{ SITE_SEO_DESCRIPTION }}"/>
+    <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="og:title" content="{{ SITE_NAME }}"/>
+    <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta property="og:url" content="{{ SITE_BASE_URL }}"/>
+    <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+{% endblock %}
+{% block content %}
+    <h1>Resume</h1>
+    <p>This is the Resume page content.</p>
+{% endblock %}

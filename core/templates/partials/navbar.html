@@ -1,0 +1,123 @@
+{% load static %}
+{% load i18n%}
+<!-- Navbar -->
+<div class="header-area sticky_nav">
+    <nav class="navbar menu_one">
+      <div class="container">
+        <a class="navbar-brand header_logo" href="index-web-developer.html" style="background-color: white;padding: 5px;border-radius: 10px;">
+          <img class="first_logo sticky_logo" src="{% static 'img/LOGO.png' %}" style="width: 100px;height: auto;" srcset="{% static 'img/LOGO.png' %} 2x" alt="logo" />
+          <img class="white_logo main_logo" src="{% static 'img/LOGO.png' %}" style="width: 100px;height: auto;" srcset="{% static 'img/LOGO.png' %} 2x" alt="logo" />
+        </a>
+
+        <div class="right-nav">
+          <a class="theme-btn btn-small d-none d-md-inline-block" href="{% url 'website:contact' %}">{%translate 'همکاری با ما' %}</a>
+          <div class="mobile_menu_left">
+            <button type="button" class="navbar-toggler mobile_menu_btn">
+              <span class="menu_toggle" style="background-color: rgb(245 245 245);">
+
+                <span class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="side_menu scroll">
+      <div class="mobile_menu_header">
+        <div class="mobile_logo">
+          <a class="navbar-brand header_logo me-0" href="{% url 'website:index'%}">
+            <img class="sticky_logo main_logo" src="{% static 'img/LOGO.png' %}" style="width: 100px;height: auto;" srcset="{% static 'img/LOGO.png' %} 2x" alt="logo">
+            <img class="white_logo" src="{% static 'img/LOGO.png' %}" style="width: 100px;height: auto;" srcset="{% static 'img/LOGO.png' %} 2x" alt="logo">
+          </a>
+        </div>
+        <div class="close_nav">
+          <i class="icon_close"></i>
+        </div>
+      </div>
+      <div class="mobile_nav_wrapper">
+        <nav class="mobile_nav_top" id="main_nav_spy">
+          <ul class="navbar-nav menu ms-auto"> 
+              <li class="nav-item dropdown submenu active">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {%translate 'Home' %}
+                  </a>
+              </li>
+              <li class="nav-item dropdown submenu">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {%translate 'Pages' %}
+                  </a>
+                  <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false" data-toggle="dropdown"></i>
+                  <ul class="dropdown-menu">
+                  <li class="nav-item"><a href="about.html" class="nav-link">{%translate 'About' %}</a></li>
+                  <li class="nav-item"><a href="services.html" class="nav-link">{%translate 'Services' %}</a></li>
+                  <li class="nav-item"><a href="work-history.html" class="nav-link">{%translate 'Work History' %}</a></li>
+                  <li class="nav-item"><a href="faq.html" class="nav-link">{%translate 'FAQ' %}</a></li>
+                  <li class="nav-item"><a href="team-members.html" class="nav-link">{%translate 'Team' %}</a></li>
+                  <li class="nav-item"><a href="member-single.html" class="nav-link">{%translate 'Team Details' %}</a></li>
+                  <li class="nav-item"><a href="proccess.html" class="nav-link">{%translate 'Process' %}</a></li>
+                  <li class="nav-item"><a href="case-study.html" class="nav-link">{%translate 'Case Study' %}</a></li>
+                  <li class="nav-item"><a href="study-details.html" class="nav-link">{%translate 'Study Details' %}</a></li>
+                  <li class="nav-item"><a href="our-customers.html" class="nav-link">{%translate 'Custome Logo' %}</a></li>
+                  <li class="nav-item"><a href="element.html" class="nav-link">{%translate 'Elements' %}</a></li>
+                  <li class="nav-item"><a href="contact.html" class="nav-link">{%translate 'Contact Us' %}</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown submenu">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {%translate 'Books & Tricks' %}
+                  </a>
+                  <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false" data-toggle="dropdown"></i>
+                  <ul class="dropdown-menu">
+                  <li class="nav-item"><a href="my-trips.html" class="nav-link">{%translate 'My Trip' %}</a></li>
+                  <li class="nav-item"><a href="my-books.html" class="nav-link">{%translate 'My Books' %}</a></li>
+                  <li class="nav-item"><a href="single-trip.html" class="nav-link">{%translate 'Single Trip' %}</a></li>
+                  <li class="nav-item"><a href="single-book.html" class="nav-link">{%translate 'Single Book' %}</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown submenu">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {%translate 'Blog' %}
+                  </a>
+                  <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false" data-toggle="dropdown"></i>
+                  <ul class="dropdown-menu">
+                  <li class="nav-item"><a href="blog-grid.html" class="nav-link">{%translate 'Blog Grid' %}</a></li>
+                  <li class="nav-item"><a href="blog-details.html" class="nav-link">{%translate 'Blog Details' %}</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown submenu">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      {%translate 'languages' %}
+                  </a>
+                  <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false" data-toggle="dropdown"></i>
+                  <ul class="dropdown-menu">
+                  {% load i18n %}
+                      <form action="{% url 'set_language' %}" method="post" id="i18n-form">{% csrf_token %}
+                          <input name="next" type="hidden" value="{{ redirect_to }}">
+                          <select name="language" class="i18n-select" >
+                              {% get_current_language as LANGUAGE_CODE %}
+                              {% get_available_languages as LANGUAGES %}
+                              {% get_language_info_list for LANGUAGES as languages %}
+                              {% for language in languages %}
+                                  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                      {{ language.name_local }} ({{ language.code }})
+                                  </option>
+                              {% endfor %}
+                          </select>
+                          <input type="submit" value="Go">
+                      </form>
+                  </ul>
+              </li>   
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+<footer id="colophon" role="contentinfo">
+    <div class="site-info" style="text-align: center">
+        Copyright&copy;&nbsp;{{ CURRENT_YEAR }}&nbsp;
+        <a href="/" target="blank">{{ SITE_NAME }}</a>
+        &nbsp;|&nbsp;
+
+        <a href="/sitemap.xml" title="SiteMap" target="_blank">
+            SiteMap
+        </a>
+        &nbsp;|&nbsp;
+        <a href="/feed" title="RSS Feed" target="_blank">
+            RSS Feed
+        </a>
+        &nbsp;|&nbsp;
+        <a href="/links.html" title="Friendly links" rel="nofollow" target="_blank">
+            Friendly links
+        </a>
+        |&nbsp; Hosting On&nbsp;
+        <a href="#" target="blank" rel="nofollow">Linode</a>
+
+        |&nbsp;
+        <a href="#" target="_blank"
+           rel="nofollow">Baidu Statistics</a>
+
+    </div>
+    <div class="site-info" style="text-align: center">
+        Powered by
+        <a href="#" rel="nofollow" target="blank">Django</a>
+        &nbsp;|&nbsp;
+        <a href="https://deodar.ir" rel="nofollow" target="blank">Deodar</a>
+        |
+        <a href="" target="blank"></a>
+        |
+        This page takes time to load:<!!LOAD_TIMES!!>s
+    </div>
+    {% if BEIAN_CODE %}
+        <div class="site-info" style="text-align: center">
+            <a href="#" rel="nofollow" target="_blank">
+                <p style=" height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">
+                    {{ BEIAN_CODE }}
+                </p>
+            </a>
+            {% if BEIAN_CODE_GONGAN and SHOW_GONGAN_CODE %}
+                {{ BEIAN_CODE_GONGAN |safe }}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if ANALYTICS_CODE %}
+        {{ ANALYTICS_CODE| safe }}
+    {% endif %}
+    {% if GLOBAL_FOOTER %}
+        {{ GLOBAL_FOOTER|safe }}
+    {% endif %}
+</footer><!-- #colophon -->
+
+
