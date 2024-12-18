@@ -4766,6 +4766,7 @@ p kbd {
 }
 
 .about-area-6 {
+  padding-top:280px;
   z-index: 1;
   overflow: hidden;
 }
@@ -7826,7 +7827,7 @@ svg.radial-progress circle.incomplete {
 }
 
 .service-area-2 {
-  padding-top: 305px;
+  padding-top: 50px;
   z-index: 1;
 }
 .service-area-2 .shape {
@@ -7834,12 +7835,12 @@ svg.radial-progress circle.incomplete {
 }
 @media screen and (min-width: 992px) {
   .service-area-2 {
-    padding-top: 90px;
+    padding-top: 50px;
   }
 }
 @media screen and (min-width: 1200px) {
   .service-area-2 {
-    padding-top: 140px;
+    padding-top: 50px;
   }
 }
 .service-area-2 .section-title {

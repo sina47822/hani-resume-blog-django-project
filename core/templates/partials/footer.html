@@ -1,26 +1,74 @@
-<footer id="colophon" role="contentinfo">
+{% load static %}
+{% load i18n %}
+{% load cache %}
+<!-- CTA Section -->
+<section class="cta-area-3 cta-area-4 position-relative pt-4 z-1 pb-0 ms-0">
+    <div class="container">
+        <div class="row">
+        <div class="col-12">
+            <div class="section-title section-tag mb-45">
+            <h2 class="title-text">{% translate 'برای یک شروع جدید فرصت را از دست ندهید...' %} </h2>
+            </div>
+        </div>
+        </div>
+        <div class="row align-items-end">
+        <div class="col-md-6 col-lg-8">
+            <div class="section-title section-tag">
+                <p class="cta-text">{% blocktranslate trimmed %}
+                    با ما در ارتباط باشید تا با شما تماس بگیریم. 
+                {% endblocktranslate %}<br>
+                {% blocktranslate trimmed %} 
+                    ببینیم که چطور می‌توانیم با هم همکاری کنیم و به هم کمک کنیم. 
+                {% endblocktranslate %}</p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="cta-btn-wrapper">
+            <a href="{% url 'website:contact' %}" class="theme-btn">{% translate 'ارتباط با ما' %} <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+        </div>
+        <hr>
+        <div class="row align-items-center justify-content-between">
+        <div class="col-md-4">
+            <div class="cta-info">
+            <span>{% translate 'E-MAIL' %}</span>
+            <a href="mailto:haniadibazad@gmail.com">haniadibazad@gmail.com</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="cta-info">
+            <span>{% translate 'شماره تماس' %}</span>
+            <a href="tel:09122844353">09122844353</a>
+            </div>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <div class="footer-img">
+            <img style="width:130px" src="{% static 'img/logo.png' %}" alt="Image">
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+    <!-- CTA Section -->
+<footer class="cta-area-4 position-relative" id="colophon" role="contentinfo">
     <div class="site-info" style="text-align: center">
         Copyright&copy;&nbsp;{{ CURRENT_YEAR }}&nbsp;
         <a href="/" target="blank">{{ SITE_NAME }}</a>
         &nbsp;|&nbsp;
 
-        <a href="/sitemap.xml" title="SiteMap" target="_blank">
+        <a href="" title="SiteMap" target="_blank">
             SiteMap
         </a>
         &nbsp;|&nbsp;
-        <a href="/feed" title="RSS Feed" target="_blank">
+        <a href="" title="RSS Feed" target="_blank">
             RSS Feed
         </a>
         &nbsp;|&nbsp;
-        <a href="/links.html" title="Friendly links" rel="nofollow" target="_blank">
+        <a href="" title="Friendly links" rel="nofollow" target="_blank">
             Friendly links
         </a>
-        |&nbsp; Hosting On&nbsp;
-        <a href="#" target="blank" rel="nofollow">Linode</a>
 
-        |&nbsp;
-        <a href="#" target="_blank"
-           rel="nofollow">Baidu Statistics</a>
 
     </div>
     <div class="site-info" style="text-align: center">
@@ -28,29 +76,9 @@
         <a href="#" rel="nofollow" target="blank">Django</a>
         &nbsp;|&nbsp;
         <a href="https://deodar.ir" rel="nofollow" target="blank">Deodar</a>
-        |
-        <a href="" target="blank"></a>
-        |
-        This page takes time to load:<!!LOAD_TIMES!!>s
+
     </div>
-    {% if BEIAN_CODE %}
-        <div class="site-info" style="text-align: center">
-            <a href="#" rel="nofollow" target="_blank">
-                <p style=" height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">
-                    {{ BEIAN_CODE }}
-                </p>
-            </a>
-            {% if BEIAN_CODE_GONGAN and SHOW_GONGAN_CODE %}
-                {{ BEIAN_CODE_GONGAN |safe }}
-            {% endif %}
-        </div>
-    {% endif %}
-    {% if ANALYTICS_CODE %}
-        {{ ANALYTICS_CODE| safe }}
-    {% endif %}
-    {% if GLOBAL_FOOTER %}
-        {{ GLOBAL_FOOTER|safe }}
-    {% endif %}
+
 </footer><!-- #colophon -->
 
 

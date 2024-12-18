@@ -18,7 +18,7 @@
     <section class="banner-area-4">
       <div class="container" style="margin-top:50px">
           <div class="row align-items-center">
-              <div class="col-xl-9 col-lg-9">
+              <div class="col-xl-8 col-lg-9">
                   <div class="banner-content banner-content-typing">
                       <small class="wow fadeInUp banner-subtitle">{% translate "به وبسایت من، هانی ادیب آزاد خوش آمدید." %} {{ SITE_NAME }}</small>
                       <h1 class="cd-headline clip home-headline">{% translate "این سایت تاسیس شده برای" %}
@@ -49,7 +49,7 @@
                       </div>
                   </div>
               </div>
-              <div class="col-lg-3 d-lg-block">
+              <div class="col-lg-4 d-lg-block">
                   <div class="banner-img-two">
                       <div class="shape wow slideInnew" data-wow-delay="0.7s">
                           <img class="layer" data-depth="-0.15" src="{% static 'img/man2.png' %}" alt="">
@@ -102,9 +102,71 @@
         </div>
     </section>
     <!-- Banner Section -->
+    <!-- About Section -->
+    <section class="about-area-6 position-relative section-padding-xl">
+        <div class="container">
+          <div class="row align-content-center">
+            <div class="col-12 col-lg-6 col-xl-5">
+              <div class="about-left-content wow fadeInUp">
+                <h2>{% translate 'من هانی ادیب آزاد هستم...' %} <br /><span>{% translate '' %}</span></h2>
+                <p class="pt-20">
+                  {% blocktranslate trimmed %}
+                  برای شناخت بهتر باید عرض کنم که یک وجه دیگر هم دارم و آن علاقه به همراهی، راهنمایی و مشاوره به افرادی ست که مایل هستند کسب و کار خودشان رو بسازن، در دنیای کارمندی خودشون پیشرفت کنن، شرایط کسب و کار خود را بهبود بدهن و یا حتا تفکرشون را برای ارتقا کیفیت زندگی تغییر بدهن. این همان کوچینگی است که این روزها بسیار مد شده و البته بسیاری هم به حق و نا حق کوچ و مربی و راهبر شده اند، من هم یکی از صدها، با این تفاوت که من اصول موفقیت در کسب و کار را تجربه کرده ام و گام به گام پیش رفتم و موفق شدم شرکتی رو بیش از 15 سال اداره کنم، تثبیت کنم و ارتقا بخشم. به تنهایی انجامش ندادم اما شما هم تنها نیستید، اگر در کنار همراهی خانواده و دوستان و اراده خودتون اگر، تجربه  فردی سرد و گرم چشیده رو هم در کنارتون داشته باشین، بسیار امیدوار خواهم بود که شما هم موفق شوید و بدین طریق دیگر نیازی به اختراع مجدد چرخ را نداشته باشید بلکه چرخ کارآمد خودتون رو بهینه کنین.  
+                  {% endblocktranslate %}
+                </p>
+                <p>
 
+                </p>
+                <a href="{% url 'website:about'%}" class="theme-btn">{% translate 'درباره من' %}</a>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 offset-xl-1">
+              <div class="about-right-content">
+                <div class="row g-0">
+                  <div class="col-sm-6 wow fadeInUp">
+                    <div class="about-counter-box bg-white">
+                      <h2 class="counter">20</h2>
+                      <div class="counter-title">
+                        <span>{% translate '' %} <br />{% translate 'تدریس در صنایع مختلف' %}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="about-counter-box">
+                      <div class="counter-logo">
+                        <img src="{% static 'img/LOGO.png' %}" alt="Logo" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="about-counter-box">
+                      <h2><span class="counter">60</span>%</h2>
+                      <div class="counter-title">
+                        <span>{% translate 'میزان موفقیت' %}<br>{% translate 'افراد و بیزینس های کوچ شده' %}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="about-counter-box bg-white">
+                      <h2><span class="counter">15</span></h2>
+                      <div class="counter-title">
+                        <span>{% translate 'تعداد افراد کوچ شده' %} <br>{% translate '' %}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <img src="{% static 'img/home_eight/shape/shape2.png' %}" alt="Shape" class="shape position-absolute top-0 wow fadeInDown"
+          data-wow-delay="0.5s" />
+    </section>
+      <!-- About Section -->
+  
     <!-- Service Section -->
-    <section class="service-area-2 position-relative section-padding-xl">
+    <section class="service-area-2 position-relative section-padding-xl bg-white-100">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-9 col-lg-6 col-xl-5">
@@ -128,9 +190,11 @@
               <div class="service-title">
                   <h3>{% translate "مشاوره کسب و کار فردی" %}</h3>
               </div>
-              <p>
-                {% translate "این بخش مربوط همراهی، راهنمایی و مشاوره به افرادی ست که مایل هستند کسب و کار خودشان رو بسازند، شرایط کسب و کار خود را بهبود بدهند و یا حتی تفکر کسب و کار خود را تغییر بدهند. ..." %}
-              </p>
+                <p>
+                    {% blocktranslate trimmed %}
+                    این بخش مربوط همراهی، راهنمایی و مشاوره به افرادی ست که مایل هستند کسب و کار خودشان رو بسازند، شرایط کسب و کار خود را بهبود بدهند و یا حتی تفکر کسب و کار خود را تغییر بدهند. ...
+                    {% endblocktranslate %}
+                </p>
                 <a href="service.html" class="btn btn-white-100 btn-round">{% translate "مطالعه..." %}</a>
             </div>
           </div>
@@ -167,75 +231,6 @@
     </section>
     <!-- Service Section -->
 
-    <!-- About Section -->
-    <section class="about-area-6 position-relative section-padding-xl bg-white-100">
-      <div class="container">
-        <div class="row align-content-center">
-          <div class="col-12 col-lg-6 col-xl-5">
-            <div class="about-left-content wow fadeInUp">
-              <h2>{% translate 'Jocelyn Culhane,' %} <br /><span>{% translate 'Psy.D' %}</span></h2>
-              <p class="pt-20">
-                {% blocktranslate trimmed %}
-                Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit
-                {% endblocktranslate %}
-              </p>
-              <p>
-                {% blocktranslate trimmed %}
-
-                Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor.
-                {% endblocktranslate %}
-              </p>
-              <a href="about.html" class="theme-btn">{% translate 'More About Me' %}</a>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6 offset-xl-1">
-            <div class="about-right-content">
-              <div class="row g-0">
-                <div class="col-sm-6 wow fadeInUp">
-                  <div class="about-counter-box bg-white">
-                    <h2 class="counter">150</h2>
-                    <div class="counter-title">
-                      <span>{% translate 'Passionate' %} <br />{% translate 'Providers' %}</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                  <div class="about-counter-box">
-                    <div class="counter-logo">
-                      <img src="{% static 'img/logo3.png' %}" alt="Logo" />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
-                  <div class="about-counter-box">
-                    <h2><span class="counter">97</span>%</h2>
-                    <div class="counter-title">
-                      <span>{% translate 'Patient Visit' %} <br>{% translate 'Satisfaction Rating' %}</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
-                  <div class="about-counter-box bg-white">
-                    <h2><span class="counter">15</span></h2>
-                    <div class="counter-title">
-                      <span>{% translate 'Wellness Center' %} <br>{% translate 'Locations' %}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <img src="{% static 'img/home_eight/shape/shape2.png' %}" alt="Shape" class="shape position-absolute top-0 wow fadeInDown"
-        data-wow-delay="0.5s" />
-    </section>
-    <!-- About Section -->
 
     <!-- FAQs Section -->
     <section class="faq-area position-relative section-padding-xl">
@@ -243,9 +238,9 @@
         <div class="row">
           <div class="col-md-6 col-xl-5 wow fadeInLeft">
             <div class="faq-left-content">
-              <h2 class="mt-n12">{% translate "I Have Experience With…" %}</h2>
+              <h2 class="mt-n12">{% translate "تجربه های من در کوچینگ…" %}</h2>
               <div class="faq-image position-relative">
-                <img src="{% static 'img/home_eight/faq-image.png' %}" alt="{% translate "FAQ" %}" />
+                <img src="{% static 'img/man3.jpg' %}" alt="{% translate "FAQ" %}" />
                 <div class="play-button">
                   <a href="https://www.youtube.com/watch?v=CaimKeDcudo" data-fancybox>
                     <i class="fas fa-play"></i>
@@ -262,17 +257,18 @@
                 <h2 class="accordion-header" id="flush-headingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    {% translate "Teletherapy" %}
+                    {% translate "رزومه من" %}
                   </button>
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse show"
                   aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
                     {% blocktranslate trimmed %}
-                      We offer teletherapy services to individuals who are not able to meet us in our offices. In these
-                      sessions, we offer the same high levels of patient-confidentiality and creative personable
-                      engagement that we do in-person. We use technology to ensure that their experience is impactful,
-                      and convenient.
+                    برای راهبری یا همان کوچینگ، فرهنگ و شیوه خودم رو دارم و با افتخار تا کنون موفق شدم چند نفر رو به ایجاد کسب و کار پایدار یا ارتقاء جایگاه شغلی و یا بهبود کیفیت زندگی راهنمایی کنم، تفکرشون رو تغییر بدم و به آنها امکان روبرو شدن با چالش های دنیای کسب و کار را بیاموزانم، هر چند از اراده و ثبات قدم خود آنها در این راه نمی توان چشم پوشی کرد. 
+                    با این اوصاف، من مهندس برقی هستم که در صنایع تدریس می کنم،  بازرگانی هستم که با داخل و خارج در تجارت هستم و راهنما و راهبری ام که با مخاطبینم همراهی و هم افزایی دارم.
+                    
+                    راستی اهل کتاب هم هستم و از مطالعه لذت می برم، گاهی دست به قلم می شم و می نویسم، دونده آماتوری هستم که ورزش بخشی از زندگیم شده هرچند بیشتر برای آمادگی جسمانی و جلوگیری از افت بدنی حاصل از افزایش سن است تا دم دادن عضلات، انگلیسیم خوبه اما آلمانی ام افتضاحه.
+                    
                     {% endblocktranslate %}
                   </div>
                 </div>
@@ -281,7 +277,7 @@
                 <h2 class="accordion-header" id="flush-headingTwo">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    {% translate "Individual Therapy" %}
+                    {% translate "ورود به بخش رزومه" %}
                   </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
@@ -309,7 +305,7 @@
         <div class="row">
           <div class="col-12">
             <div class="section-title wow fadeInUp">
-              <h2 class="mt-n12">Testimonials</h2>
+              <h2 class="mt-n12">{% translate 'نظرات دوستان و همراهان'%}</h2>
             </div>
           </div>
         </div>
@@ -318,85 +314,92 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="testimonial testimonial-item">
-              <span class="category">Olga</span>
-              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
-              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
-                Center</span>
+              <span class="category">{%  translate 'همراهان'%}</span>
+              <h3 class="testimonial-title">{% translate 'ممنونم از همه زحمات تیم زربین و مهندس ادیب آزاد'%}</h3>
+              <span class="testimonial-subtitle">
+                {% translate 'مدیرعامل شرکت طراحی سایت دئودار'%}
+              </span>
               <div class="author-name">
                 <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
-                <span class="author-title">Zain Torff</span>
+                <span class="author-title">{% translate 'sina afshar' %}</span>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="testimonial testimonial-item">
-              <span class="category">Family S</span>
-              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
-              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
-                Center</span>
-              <div class="author-name">
-                <img src="{% static 'img/home_eight/author/author2.png' %}" alt="Image" class="author-img">
-                <span class="author-title">Madelyn Press</span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="testimonial testimonial-item">
-              <span class="category">Karina</span>
-              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
-              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
-                Center</span>
-              <div class="author-name">
-                <img src="{% static 'img/home_eight/author/author3.png' %}" alt="Image" class="author-img">
-                <span class="author-title">Lincoln Levin</span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="testimonial testimonial-item">
-              <span class="category">Olga</span>
-              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
-              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
-                Center</span>
-              <div class="author-name">
-                <img src="{% static 'img/home_eight/author/author4.png' %}" alt="Image" class="author-img">
-                <span class="author-title">Charlie Rhiel</span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="testimonial testimonial-item">
-              <span class="category">Olga</span>
-              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
-              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
-                Center</span>
+              <span class="category">{%  translate 'همراهان'%}</span>
+              <h3 class="testimonial-title">{% translate 'ممنونم از همه زحمات تیم زربین و مهندس ادیب آزاد'%}</h3>
+              <span class="testimonial-subtitle">
+                {% translate 'مدیرعامل شرکت طراحی سایت دئودار'%}
+              </span>
               <div class="author-name">
                 <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
-                <span class="author-title">Zain Torff</span>
+                <span class="author-title">{% translate 'sina afshar' %}</span>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="testimonial testimonial-item">
-              <span class="category">Olga</span>
-              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
-              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
-                Center</span>
+              <span class="category">{%  translate 'همراهان'%}</span>
+              <h3 class="testimonial-title">{% translate 'ممنونم از همه زحمات تیم زربین و مهندس ادیب آزاد'%}</h3>
+              <span class="testimonial-subtitle">
+                {% translate 'مدیرعامل شرکت طراحی سایت دئودار'%}
+              </span>
               <div class="author-name">
                 <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
-                <span class="author-title">Zain Torff</span>
+                <span class="author-title">{% translate 'sina afshar' %}</span>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="testimonial testimonial-item">
-              <span class="category">Olga</span>
-              <h3 class="testimonial-title">Thank you and your entire team for your kind and attentive attitude.</h3>
-              <span class="testimonial-subtitle">Head of the Assisted Reproductive technology
-                Center</span>
+              <span class="category">{%  translate 'همراهان'%}</span>
+              <h3 class="testimonial-title">{% translate 'ممنونم از همه زحمات تیم زربین و مهندس ادیب آزاد'%}</h3>
+              <span class="testimonial-subtitle">
+                {% translate 'مدیرعامل شرکت طراحی سایت دئودار'%}
+              </span>
               <div class="author-name">
                 <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
-                <span class="author-title">Zain Torff</span>
+                <span class="author-title">{% translate 'sina afshar' %}</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">{%  translate 'همراهان'%}</span>
+              <h3 class="testimonial-title">{% translate 'ممنونم از همه زحمات تیم زربین و مهندس ادیب آزاد'%}</h3>
+              <span class="testimonial-subtitle">
+                {% translate 'مدیرعامل شرکت طراحی سایت دئودار'%}
+              </span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
+                <span class="author-title">{% translate 'sina afshar' %}</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">{%  translate 'همراهان'%}</span>
+              <h3 class="testimonial-title">{% translate 'ممنونم از همه زحمات تیم زربین و مهندس ادیب آزاد'%}</h3>
+              <span class="testimonial-subtitle">
+                {% translate 'مدیرعامل شرکت طراحی سایت دئودار'%}
+              </span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
+                <span class="author-title">{% translate 'sina afshar' %}</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial testimonial-item">
+              <span class="category">{%  translate 'همراهان'%}</span>
+              <h3 class="testimonial-title">{% translate 'ممنونم از همه زحمات تیم زربین و مهندس ادیب آزاد'%}</h3>
+              <span class="testimonial-subtitle">
+                {% translate 'مدیرعامل شرکت طراحی سایت دئودار'%}
+              </span>
+              <div class="author-name">
+                <img src="{% static 'img/home_eight/author/author.png' %}" alt="Image" class="author-img">
+                <span class="author-title">{% translate 'sina afshar' %}</span>
               </div>
             </div>
           </div>
@@ -413,36 +416,55 @@
     <section class="timeline-area pt-105 pb-100">
         <div class="container">
             <div class="section-title text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h2>{% translate 'Education' %}</h2>
+                <h2>{% translate 'فرآیند مشاوره و راهبری:' %}</h2>
             </div>
             <div class="timeline-widget mt-70">
-                <div class="timeline-wrapper wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="timestamp">11.05.2013</div>
+                <div class="timeline-wrapper timeline-inverted wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="timestamp">{% translate 'مرحله یک' %}</div>
                     <div class="timeline-panel">
-                        <h3>{% translate 'Davidson College' %}</h3>
-                        <span>{% translate 'North Carolina' %}</span>
-                        <p>{% blocktranslate trimmed %}Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In
-                            iaculis viverra neque, ac eleifend ante lobortis id. In viverra ipsum stie id viverra.{% endblocktranslate %}
+                        <h3>{% translate 'ارائه درخواست' %}</h3>
+                        <span>{% translate 'بررسی اولیه درخواست ارائه شده توسط تیم' %}</span>
+                        <p>
+                            {% blocktranslate trimmed %}
+                            در این مرحله در صورت قبول درخواست با مخاطب تماس گرفته و می شود و مرحله دوم کار آغاز می شود
+                            
+                            {% endblocktranslate %}
                         </p>
                     </div>
                 </div>
                 <div class="timeline-wrapper timeline-inverted wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="timestamp">11.05.2013</div>
+                    <div class="timestamp">{% translate 'مرحله دو' %}</div>
                     <div class="timeline-panel">
-                        <h3>{% translate 'Davidson College' %}</h3>
-                        <span>{% translate 'North Carolina' %}</span>
-                        <p>{% blocktranslate trimmed %}Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In
-                            iaculis viverra neque, ac eleifend ante lobortis id. In viverra ipsum stie id viverra.{% endblocktranslate %}
+                        <h3>{% translate 'گفتگو با مخاطب' %}</h3>
+                        <span>{% translate 'دعوت به جلسه حضوری یا تماس تلفنی' %}</span>
+                        <p>
+                            {% blocktranslate trimmed %}
+                            در این جلسه به صورت کلی برای مخاطب اهداف کلی در نظر گرفته خواهد شد و مخاطب بوسیله کار عملی سنجیده خواهد شد
+                            {% endblocktranslate %}
                         </p>
                     </div>
                 </div>
-                <div class="timeline-wrapper wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="timestamp">11.05.2013</div>
+                <div class="timeline-wrapper  timeline-inverted wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="timestamp">{% translate 'مرحله سه' %}</div>
                     <div class="timeline-panel">
-                        <h3>{% translate 'Davidson College' %}</h3>
-                        <span>{% translate 'North Carolina' %}</span>
-                        <p>{% blocktranslate trimmed %}Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In
-                            iaculis viverra neque, ac eleifend ante lobortis id. In viverra ipsum stie id viverra.{% endblocktranslate %}
+                        <h3>{% translate 'بازنگری و آغاز فرایند راهبری' %}</h3>
+                        <span>{% translate 'بررسی اهداف در نظر گرفته شده' %}</span>
+                        <p>
+                            {% blocktranslate trimmed %}
+                            در این مرحله میزان درستی اهداف تعیین شده سنجش می شود و در صورت صحت اهداف، فرایند راهبری آغاز می شود
+                            {% endblocktranslate %}
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-wrapper  timeline-inverted wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="timestamp">{% translate 'مرحله چهارم' %}</div>
+                    <div class="timeline-panel">
+                        <h3>{% translate 'بررسی نتایج' %}</h3>
+                        <span>{% translate 'بررسی نتایج اهداف تعیین شده در مراحل قبل' %}</span>
+                        <p>
+                            {% blocktranslate trimmed %}
+                            هر گام و بخشی که به پیش می رود و نتایجی از آن حاصل می گردد که بر اهداف نهایی و یا زمان بندی پیش بینی شده تاثیر گذار می گردند می بایستی که مورد بررسی قرار گیرند.
+                            {% endblocktranslate %}
                         </p>
                     </div>
                 </div>
@@ -457,20 +479,20 @@
         <div class="row">
           <div class="col-md-6">
             <div class="booking-form wow fadeInLeft" data-wow-delay="0.2s">
-              <h2 class="mb-4 mt-n12">{% translate 'Book an Appointment' %}</h2>
+              <h2 class="mb-4 mt-n12">{% translate 'ارسال درخواست مصاحبه' %}</h2>
               <form action="#">
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="name" class="form-label">{% translate 'Your name' %}</label>
-                      <input type="text" id="name" class="form-control" placeholder="Full Name">
+                      <label for="name" class="form-label">{% translate 'نام شما' %}</label>
+                      <input type="text" id="name" class="form-control" placeholder="{% translate 'نام کامل شما' %}">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="basicDate" class="form-label form-date">{% translate 'Date of Birth' %}</label>
+                      <label for="basicDate" class="form-label form-date">{% translate 'تاریخ تولد' %}</label>
                       <div class="form-calender position-relative">
-                        <input type="text" class="form-control" id="basicDate" placeholder="MM/DD/YYYY" data-input>
+                        <input type="text" class="form-control" id="basicDate" placeholder="MM/DD/YYYY" data-input style="text-align: center;">
                         <div class="form-icon">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -491,27 +513,26 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="phone" class="form-label">{% translate 'Phone Number' %}</label>
-                      <input type="text" id="phone" class="form-control" placeholder="33 (202) 123 4567">
+                      <label for="phone" class="form-label">{% translate 'شماره تماس' %}</label>
+                      <input type="text" id="phone" class="form-control" placeholder="09120000000" style="text-align: center;">
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="service" class="form-label">{% translate 'Type of Service' %}</label>
+                      <label for="service" class="form-label">{% translate 'انتخاب خدمت مورد نظر' %}</label>
                       <select id="service" class="select">
-                        <option data-display="Select service">{% translate 'Select service' %}</option>
-                        <option value="1">{% translate 'Some option' %}</option>
-                        <option value="2">{% translate 'Another option' %}</option>
-                        <option value="3" disabled>{% translate 'A disabled option' %}</option>
-                        <option value="4">{% translate 'Potato' %}</option>
+                        <option data-display="{% translate 'انتخاب خدمت' %}">{% translate 'انتخاب خدمت' %}</option>
+                        <option value="1">{% translate 'مشاوره کسب و کار فردی' %}</option>
+                        <option value="2">{% translate 'مشاوره تیم کسب و کار' %}</option>
+                        <option value="3" disabled>{% translate 'مشاوره اشخاص' %}</option>
                       </select>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="availability" class="form-label">{% translate 'Availability' %}</label>
+                      <label for="availability" class="form-label">{% translate 'زمان مورد نظر برای هماهنگی' %}</label>
                       <div class="form-calender position-relative">
-                        <input type="text" class="form-control" id="availability" placeholder="MM/DD/YYYY" data-input>
+                        <input type="text" class="form-control" id="availability" placeholder="MM/DD/YYYY" data-input style="text-align: center;">
                         <div class="form-icon">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -532,7 +553,7 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <button class="theme-btn" type="submit">{% translate 'Check Availability' %}</button>
+                      <button class="theme-btn" type="submit">{% translate 'ارسال فرم درخواست' %}</button>
                     </div>
                   </div>
                 </div>
@@ -551,8 +572,8 @@
                     </svg>
                   </div>
                   <div class="contact-text">
-                    <h5>{% translate 'Call' %}</h5>
-                    <p>(925)-481-9365</p>
+                    <h5>{% translate 'شماره تماس' %}</h5>
+                    <p>09122844353</p>
                   </div>
                 </li>
                 <li class="contact-list-item">
@@ -564,9 +585,9 @@
                     </svg>
                   </div>
                   <div class="contact-text">
-                    <h5>{% translate 'Email' %}</h5>
-                    <a href="mailto:jocelyn@allfolio.com">jocelyn@allfolio.com</a>
-                  </div>
+                    <h5>{% translate 'آدرس ایمیل' %}</h5>
+                    <a href="mailto:haniadibazad@gmail.com">haniadibazad@gmail.com</a>
+                </div>
                 </li>
                 <li class="contact-list-item">
                   <div class="contact-icon">
@@ -580,25 +601,25 @@
                     </svg>
                   </div>
                   <div class="contact-text">
-                    <h5>{% translate 'Address' %}</h5>
-                    <p>{% translate '1234 Divi St. #100, San ' %}<br>{% translate 'Francisco, CA 93150' %}</p>
+                    <h5>{% translate 'آدرس' %}</h5>
+                    <p>{% translate 'تهران میدان رسالت ' %}<br>{% translate 'کوچه مهدی پلاک 32' %}</p>
                   </div>
                 </li>
               </ul>
               <div class="working-hours">
-                <h3>{% translate 'Working Hours' %}</h3>
+                <h3>{% translate 'ساعات کاری' %}</h3>
                 <ul class="working-hours-info">
                   <li class="working-hours-item">
-                    <span>{% translate 'Monday – Friday :' %}</span>
+                    <span>{% translate 'شنبه – چهارشنبه :' %}</span>
                     <span>{% translate '10am – 9pm' %}</span>
                   </li>
                   <li class="working-hours-item">
-                    <span>{% translate 'Saturday :' %}</span>
-                    <span>{% translate '10am – 3pm' %}</span>
+                    <span>{% translate 'پنجشنبه :' %}</span>
+                    <span>{% translate 'تعطیل' %}</span>
                   </li>
                   <li class="working-hours-item">
-                    <span>{% translate 'Sunday :' %}</span>
-                    <span>{% translate '2pm – 9pm' %}</span>
+                    <span>{% translate 'جمعه :' %}</span>
+                    <span>{% translate 'تعطیل' %}</span>
                   </li>
                 </ul>
               </div>
@@ -609,60 +630,13 @@
     </section>
     <!-- Book an Appointment Section -->
 
-    <!-- CTA Section -->
-    <section class="cta-area-3 cta-area-4 position-relative section-padding-xl z-1 pb-0 ms-0">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title section-tag mb-45">
-              <h2 class="title-text">{% translate "Let's start something" %} <br>{% translate 'completely new together' %}</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-end">
-          <div class="col-md-6 col-lg-8">
-            <div class="section-title section-tag">
-              <p class="cta-text">{% blocktranslate trimmed %}
-                Drop us a line, and we'll get in touch. {% endblocktranslate %}<br>
-                {% blocktranslate trimmed %} We'll see if we're a match and how we can help each other.{% endblocktranslate %}</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="cta-btn-wrapper">
-              <a href="contact.html" class="theme-btn">{% translate 'Contact Us' %} <i class="fas fa-long-arrow-alt-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row align-items-center justify-content-between">
-          <div class="col-md-4">
-            <div class="cta-info">
-              <span>{% translate 'E-MAIL' %}</span>
-              <a href="mailto:hello@allfolio.com">{% translate 'hello@allfolio.com' %}</a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="cta-info">
-              <span>{% translate 'PHONE NUMBER' %}</span>
-              <a href="tel:1234567890">+123 456 7890</a>
-            </div>
-          </div>
-          <div class="col-md-4 text-md-end">
-            <div class="footer-img">
-              <img src="{% static 'img/logo.png' %}" alt="Image">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- CTA Section -->
   </div>
-<div>
+<!-- <div>
     <h2>{% translate 'Featured Articles' %}</h2>
     <ul>
         {% for article in posts %}
             <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
         {% endfor %}
     </ul>
-</div>
+</div> -->
 {% endblock %}

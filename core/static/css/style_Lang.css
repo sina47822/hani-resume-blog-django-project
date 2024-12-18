@@ -42,7 +42,13 @@ h1, h2, h3, h4, h5 , h6{
     font-family: "dana", sans-serif;
     --ibm: "dana"
 }
+.about-area-6 .about-counter-box.bg-white {
+    box-shadow: 0 0 20px -5px rgb(131 146 167);
+}
 
+.faq-accordion-item .accordion-body {
+    text-align: justify;
+}
 .section-title h2 {
     font-family: 'dana';
 }
