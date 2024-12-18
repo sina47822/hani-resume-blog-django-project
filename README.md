@@ -1,6 +1,6 @@
 # hani-resume-blog-django-project
 
-## how to run this project to your server
+## how to run this project to your local server
 first clone this project to your server 
 for this job put ssh key in project or you need to access if its not public
 then clone the project
