@@ -33,12 +33,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('tarjome', include('rosetta.urls')),
+
+    path('', include(('website.urls' , 'website'), namespace= 'website')),
+    path('posts/', include(('blog.urls' , 'blog'), namespace= 'blog')),
+    path('', include('website.urls')),
+    path('dashboard/', include('dashboard.urls')),
+    path('accounts/', include('account.urls')),
+    path('comment/', include('comment.urls')),
+
+    path('api/users/', include('OTP.urls')),
+    
     path('tinymce/', include('tinymce.urls')),
     path('robots.txt', include('robots.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
-    path('', include(('website.urls' , 'website'), namespace= 'website')),
-    path('posts/', include(('blog.urls' , 'blog'), namespace= 'blog')),
 ]
 handler400 = 'website.views.handler_400'
 handler403 = 'website.views.handler_403'

@@ -43,14 +43,19 @@ INSTALLED_APPS = [
     #my apps
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig',
-
+    'account.apps.AccountConfig',
+    'dashboard.apps.DashboardConfig',
+    'comment.apps.CommentConfig',
+    'OTP.apps.OtpConfig',
     #another apps
     'django.contrib.sitemaps',
     'robots',
     'humanize',
     'tinymce',
     'rosetta',
-
+    #other app
+    'import_export',
+    'rest_framework',
 ]
 
 SITE_ID = 1
@@ -149,6 +154,19 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+# accounts model settings
+AUTH_USER_MODEL = 'account.User'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL= '/'
+
+import os
+
+EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp4dev")
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "False") == "True"
+EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", "False") == "True"
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", 25))
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
