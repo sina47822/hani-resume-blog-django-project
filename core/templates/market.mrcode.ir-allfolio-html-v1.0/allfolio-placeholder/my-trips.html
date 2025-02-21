@@ -1,0 +1,706 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Allfolio - All in one portfolio HTML template</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/elegant-icons.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/fancybox.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/default.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" media="all" />
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8,
+            });
+        }
+    </script>
+</head>
+
+<body data-bs-target="#main_nav_spy" data-bs-spy="scroll" data-bs-offset="50">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="round_spinner">
+                <div class="spinner"></div>
+                <div class="text">
+                    <img src="img/logo.png" alt="">
+                </div>
+            </div>
+            <h2 class="head">Did You Know?</h2>
+            <p></p>
+        </div>
+    </div>
+
+    <div class="body_wrapper">
+        <div class="click_capture"></div>
+        <!-- Navbar -->
+        <nav class="navbar menu_one  sticky-nav">
+            <div class="container">
+                <a class="navbar-brand header_logo" href="index-web-developer.html">
+                    <img class="first_logo sticky_logo" src="img/logo.png" srcset="img/logo@2x.png 2x" alt="logo">
+                    <img class="white_logo main_logo" src="img/logo-w.png" srcset="img/logo-w@2x.png 2x" alt="logo">
+                </a>
+
+                <div class="right-nav">
+                    <a class="theme-btn btn-small" href="contact.html">Let’s Talk</a>
+                    <div class="mobile_menu_left">
+                        <button type="button" class="navbar-toggler mobile_menu_btn">
+                            <span class="menu_toggle ">
+                                <span class="hamburger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="side_menu scroll">
+            <div class="mobile_menu_header">
+                <div class="mobile_logo">
+                    <a class="navbar-brand header_logo me-0" href="index-web-developer.html">
+                        <img class="sticky_logo main_logo" src="img/logo.png" srcset="img/logo@2x.png 2x" alt="logo">
+                        <img class="white_logo" src="img/logo-w.png" srcset="img/logo-w@2x.png 2x" alt="logo">
+                    </a>
+                </div>
+                <div class="close_nav">
+                    <i class="icon_close"></i>
+                </div>
+            </div>
+            <div class="mobile_nav_wrapper">
+                <nav class="mobile_nav_top" id="main_nav_spy">
+                    <ul class="navbar-nav menu ms-auto">
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Home
+                            </a>
+                            <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false"
+                                data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="index-web-developer.html" class="nav-link">Web Developer
+                                        (Dark)</a></li>
+                                <li class="nav-item"><a href="index-ui-ux-designer.html" class="nav-link">UI/UX
+                                        Designer</a></li>
+                                <li class="nav-item"><a href="index-website-designer.html" class="nav-link">Website
+                                        Designer</a></li>
+                                <li class="nav-item"><a href="index-programmer.html" class="nav-link">Programmer
+                                        (Dark)</a></li>
+                                <li class="nav-item"><a href="index-passionate-coder.html" class="nav-link">Passionate
+                                        Coder</a></li>
+                                <li class="nav-item"><a href="index-creative-fullscreen-slides.html"
+                                        class="nav-link">Creative Fullscreen Slides</a></li>
+                                <li class="nav-item"><a href="index-colorful-fullscreen-slides.html"
+                                        class="nav-link">Colorful Fullscreen Slides</a></li>
+                                <li class="nav-item"><a href="index-professional-photographer.html"
+                                        class="nav-link">Professional Photographer</a></li>
+                                <li class="nav-item"><a href="index-doctor.html" class="nav-link">Doctor</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Pages
+                            </a>
+                            <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false"
+                                data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                                <li class="nav-item"><a href="services.html" class="nav-link">Service</a></li>
+                                <li class="nav-item"><a href="work-history.html" class="nav-link">Work History</a></li>
+                                <li class="nav-item"><a href="faq.html" class="nav-link">Faq</a></li>
+                                <li class="nav-item"><a href="team-members.html" class="nav-link">Team</a></li>
+                                <li class="nav-item"><a href="member-single.html" class="nav-link">Team Details</a></li>
+                                <li class="nav-item"><a href="proccess.html" class="nav-link">Proccess</a></li>
+                                <li class="nav-item"><a href="case-study.html" class="nav-link">Case Study</a></li>
+                                <li class="nav-item"><a href="study-details.html" class="nav-link">Study Details</a>
+                                </li>
+                                <li class="nav-item"><a href="our-customers.html" class="nav-link">Customer Logo</a>
+                                </li>
+                                <li class="nav-item"><a href="element.html" class="nav-link">Elements</a></li>
+                                <li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                                <li class="nav-item"><a href="contact-2.html" class="nav-link">Contact Us-2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Portfolios
+                            </a>
+                            <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false"
+                                data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="gallery.html" class="nav-link">Portfolio Gallery</a></li>
+                                <li class="nav-item"><a href="portfolio-diagonal-slideshow.html"
+                                        class="nav-link">Diagonal
+                                        Slideshow</a></li>
+                                <li class="nav-item"><a href="portfolio-details-classic.html" class="nav-link">Portfolio
+                                        Classic</a></li>
+                                <li class="nav-item"><a href="portfolio-carousel.html" class="nav-link">Portfolio
+                                        Carousel</a></li>
+                                <li class="nav-item"><a href="portfolio-before-after.html" class="nav-link">Portfolio
+                                        Before After</a></li>
+                                <li class="nav-item"><a href="portfolio-details.html" class="nav-link">Portfolio
+                                        Details</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu active">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Books & Trips
+                            </a>
+                            <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false"
+                                data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item active"><a href="my-trips.html" class="nav-link">My Trip</a></li>
+                                <li class="nav-item"><a href="my-books.html" class="nav-link">My Books</a></li>
+                                <li class="nav-item"><a href="single-trip.html" class="nav-link">Single Trip</a></li>
+                                <li class="nav-item"><a href="single-book.html" class="nav-link">Single Book</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Blog
+                            </a>
+                            <i class="arrow_carrot-down mobile_dropdown_icon" aria-hidden="false"
+                                data-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="blog-grid.html" class="nav-link">Blog Grid</a></li>
+                                <li class="nav-item"><a href="blog-extend-grid.html" class="nav-link">Extended Grid</a>
+                                </li>
+                                <li class="nav-item"><a href="blog-list.html" class="nav-link">Blog List</a></li>
+                                <li class="nav-item"><a href="blog-details.html" class="nav-link">Blog Details</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <a class="theme-btn btn-small" href="contact.html">Let’s Talk</a>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar end-->
+
+
+        <!-- Banner Section -->
+        <section class="banner_map" id="banner_map"></section>
+        <!-- Banner Section -->
+
+        <!-- My Trip Section -->
+        <section class="my-trips-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 post-pad">
+                        <div class="trip-post wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="post-header">
+                                <a href="single-trip.html">
+                                    <h3>Weekend in Warsaw Food</h3>
+                                </a>
+                                <div class="post-meta">
+                                    <a href="#" class="post-cat"> <img src="img/my_trips/restaurant-dish.svg" alt="">
+                                        Recipes</a>
+                                    <a href="#" class="post-date"><img src="img/my_trips/calendar-outline.svg" alt="">
+                                        June 9, 2021</a>
+                                </div>
+                            </div>
+                            <div class="post-body">
+                                <div class="post-img college-photo">
+                                    <a href="img/my_trips/post-1.1.png" data-fancybox="gallery"><img
+                                            src="img/my_trips/post-1.1.png" alt="gallery"></a>
+                                    <a href="img/my_trips/post-1.2.png" data-fancybox="gallery"><img
+                                            src="img/my_trips/post-1.2.png" alt=""></a>
+                                    <a href="img/my_trips/post-1.3.png" data-fancybox="gallery"><img
+                                            src="img/my_trips/post-1.3.png" alt=""></a>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim libero,
+                                    tincidunt vel massa at, tempor dapibus lorem. Donec sapien neque, sodales ac
+                                    pulvinar id, semper in dolor. Quisque ac…</p>
+
+                            </div>
+                            <div class="post-footer">
+                                <a href="single-trip.html" class="theme-btn theme-btn-outline">View Trip</a>
+                                <div>
+                                    <span> <img src="img/my_trips/pricetag-outline.svg" alt="">Posted in Recipes</span>
+                                    <span> <img src="img/my_trips/person-outline.svg" alt="">Jakob</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trip-post wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="post-header">
+                                <a href="single-trip.html">
+                                    <h3>Weekend in Warsaw Food</h3>
+                                </a>
+                                <div class="post-meta">
+                                    <a href="#" class="post-cat"> <img src="img/my_trips/restaurant-dish.svg" alt="">
+                                        Recipes</a>
+                                    <a href="#" class="post-date"><img src="img/my_trips/calendar-outline.svg" alt="">
+                                        June 9, 2021</a>
+                                </div>
+                            </div>
+                            <div class="post-body">
+                                <div class="post-img slider-photo">
+                                    <div>
+                                        <img src="img/my_trips/post-2.1.png" alt="">
+                                        <div class="caption">I've Fallen In Love With Budapest</div>
+                                    </div>
+                                    <div>
+                                        <img src="img/my_trips/post-2.1.png" alt="">
+                                        <div class="caption">I've Fallen In Love With Budapest</div>
+                                    </div>
+                                    <div>
+                                        <img src="img/my_trips/post-2.1.png" alt="">
+                                        <div class="caption">I've Fallen In Love With Budapest</div>
+                                    </div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim libero,
+                                    tincidunt vel massa at, tempor dapibus lorem. Donec sapien neque, sodales ac
+                                    pulvinar id, semper in dolor. Quisque ac…</p>
+
+                            </div>
+                            <div class="post-footer">
+                                <a href="single-trip.html" class="theme-btn theme-btn-outline">View Trip</a>
+                                <div>
+                                    <span> <img src="img/my_trips/pricetag-outline.svg" alt="">Posted in Recipes</span>
+                                    <span> <img src="img/my_trips/person-outline.svg" alt="">Jakob</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trip-post wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="post-header">
+                                <a href="single-trip.html">
+                                    <h3>Weekend in Warsaw Food</h3>
+                                </a>
+                                <div class="post-meta">
+                                    <a href="#" class="post-cat"> <img src="img/my_trips/restaurant-dish.svg" alt="">
+                                        Recipes</a>
+                                    <a href="#" class="post-date"><img src="img/my_trips/calendar-outline.svg" alt="">
+                                        June 9, 2021</a>
+                                </div>
+                            </div>
+                            <div class="post-body">
+                                <div class="post-img video">
+                                    <img src="img/my_trips/post-3.png" alt="">
+                                    <a class="play-button" href="https://www.youtube.com/watch?v=CaimKeDcudo"
+                                        data-fancybox="">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim libero,
+                                    tincidunt vel massa at, tempor dapibus lorem. Donec sapien neque, sodales ac
+                                    pulvinar id, semper in dolor. Quisque ac…</p>
+
+                            </div>
+                            <div class="post-footer">
+                                <a href="single-trip.html" class="theme-btn theme-btn-outline">View Trip</a>
+                                <div>
+                                    <span> <img src="img/my_trips/pricetag-outline.svg" alt="">Posted in Recipes</span>
+                                    <span> <img src="img/my_trips/person-outline.svg" alt="">Jakob</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trip-post wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="post-header">
+                                <a href="single-trip.html">
+                                    <h3>Weekend in Warsaw Food</h3>
+                                </a>
+                                <div class="post-meta">
+                                    <a href="#" class="post-cat"> <img src="img/my_trips/restaurant-dish.svg" alt="">
+                                        Recipes</a>
+                                    <a href="#" class="post-date"><img src="img/my_trips/calendar-outline.svg" alt="">
+                                        June 9, 2021</a>
+                                </div>
+                            </div>
+                            <div class="post-body">
+                                <div class="post-img ">
+                                    <img src="img/my_trips/post-4.png" alt="">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim libero,
+                                    tincidunt vel massa at, tempor dapibus lorem. Donec sapien neque, sodales ac
+                                    pulvinar id, semper in dolor. Quisque ac…</p>
+
+                            </div>
+                            <div class="post-footer">
+                                <a href="single-trip.html" class="theme-btn theme-btn-outline">View Trip</a>
+                                <div>
+                                    <span> <img src="img/my_trips/pricetag-outline.svg" alt="">Posted in Recipes</span>
+                                    <span> <img src="img/my_trips/person-outline.svg" alt="">Jakob</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trip-post wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="post-header">
+                                <a href="single-trip.html">
+                                    <h3>Weekend in Warsaw Food</h3>
+                                </a>
+                                <div class="post-meta">
+                                    <a href="#" class="post-cat"> <img src="img/my_trips/restaurant-dish.svg" alt="">
+                                        Recipes</a>
+                                    <a href="#" class="post-date"><img src="img/my_trips/calendar-outline.svg" alt="">
+                                        June 9, 2021</a>
+                                </div>
+                            </div>
+                            <div class="post-body">
+                                <div class="post-img">
+                                    <img src="img/my_trips/post-5.png" alt="">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim libero,
+                                    tincidunt vel massa at, tempor dapibus lorem. Donec sapien neque, sodales ac
+                                    pulvinar id, semper in dolor. Quisque ac…</p>
+
+                            </div>
+                            <div class="post-footer">
+                                <a href="single-trip.html" class="theme-btn theme-btn-outline">View Trip</a>
+                                <div>
+                                    <span> <img src="img/my_trips/pricetag-outline.svg" alt="">Posted in Recipes</span>
+                                    <span> <img src="img/my_trips/person-outline.svg" alt="">Jakob</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="post-pagination wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="page">
+                                <a class="active" href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                            </div>
+                            <a href="#" class="next">Next <i class="fas fa-chevron-right"></i> </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="trip-sidebar">
+                            <div class="author wow fadeInUp" data-wow-delay="0.4s">
+                                <img class="auth-img" src="img/my_trips/author.png" alt="">
+                                <h4>Hi There, I’m Jakob</h4>
+                                <p>This blog will provides you many tested tips and advices about traveling anywhere
+                                    without spending a fortune.</p>
+                                <div class="signature">
+                                    <img src="img/my_trips/author-signature.png" alt="">
+                                </div>
+                            </div>
+
+                            <div class="single-widget cat-widget wow fadeInUp" data-wow-delay="0.5s">
+                                <h3 class="widget-header">Categories</h3>
+                                <ul>
+                                    <li><a href="#"><img src="img/my_trips/cat-icon-01.svg" alt="">Recipes</a></li>
+                                    <li><a href="#"><img src="img/my_trips/cat-icon-02.svg" alt="">Flights</a></li>
+                                    <li><a href="#"><img src="img/my_trips/cat-icon-03.svg" alt="">Sailing</a></li>
+                                    <li><a href="#"><img src="img/my_trips/cat-icon-04.svg" alt="">Hiking Trails</a>
+                                    </li>
+                                    <li><a href="#"><img src="img/my_trips/cat-icon-05.svg" alt="">Winter Vacation</a>
+                                    </li>
+                                    <li><a href="#"><img src="img/my_trips/cat-icon-06.svg" alt="">Summer Vacation</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="single-widget populer-post wow fadeInUp" data-wow-delay="0.6s">
+                                <h3 class="widget-header">Popular Posts</h3>
+                                <div class="single-post">
+                                    <img src="img/my_trips/populer-post-1.png" alt="">
+                                    <a href="#">
+                                        <h5 class="title">Two Days in Budapest</h5>
+                                    </a>
+                                    <div class="post-date"><img src="img/my_trips/calendar-outline.svg" alt=""> June 9,
+                                        2021
+                                    </div>
+                                </div>
+                                <div class="single-post">
+                                    <img src="img/my_trips/populer-post-2.png" alt="">
+                                    <a href="#">
+                                        <h5 class="title">Two Days in Budapest</h5>
+                                    </a>
+                                    <div class="post-date"><img src="img/my_trips/calendar-outline.svg" alt=""> June 9,
+                                        2021
+                                    </div>
+                                </div>
+                                <div class="single-post">
+                                    <img src="img/my_trips/populer-post-3.png" alt="">
+                                    <a href="#">
+                                        <h5 class="title">Two Days in Budapest</h5>
+                                    </a>
+                                    <div class="post-date"><img src="img/my_trips/calendar-outline.svg" alt=""> June 9,
+                                        2021
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-widget wow fadeInUp" data-wow-delay="0.6s">
+                                <h3 class="widget-header">Continents Tags</h3>
+                                <div class="post-tag">
+                                    <a href="#">Budapest</a>
+                                    <a href="#">Fuerteventura</a>
+                                    <a href="#">Spain</a>
+                                    <a href="#">Poland</a>
+                                    <a href="#">Germany</a>
+                                    <a href="#">Italy</a>
+                                    <a href="#">Rome</a>
+                                    <a href="#">Singapore</a>
+                                </div>
+                            </div>
+                            <div class="single-widget wow fadeInUp" data-wow-delay="0.7s">
+                                <h3 class="widget-header">Follow Me</h3>
+                                <div class="social-link-3 row gx-0">
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                            <h6>68.8k</h6>
+                                            <p>Followers</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <i class="fab fa-google-plus-g"></i>
+                                            <h6>68.8k</h6>
+                                            <p>Followers</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <h6>68.8k</h6>
+                                            <p>Followers</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                            <h6>68.8k</h6>
+                                            <p>Followers</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <i class="fab fa-youtube"></i>
+                                            <h6>68.8k</h6>
+                                            <p>Followers</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <i class="fab fa-pinterest-p"></i>
+                                            <h6>68.8k</h6>
+                                            <p>Followers</p>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- My Trip Section -->
+        <!-- Instagram Section -->
+        <section class="overflow-hidden mb-10">
+
+            <div class="instagram-wrapper">
+                <div class="instagram-feed-three">
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-01.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-02.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-03.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-04.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-05.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-06.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-07.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-01.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-02.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-03.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-04.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="instagram-feed-item">
+                        <img src="img/my_trips/insta-05.png" alt="Instagram" />
+                        <a class="icon-link" href="http://www.instagram.com">
+                            <span class="instagram-icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- Instagram Section -->
+
+        <!-- footer -->
+        <footer class="footer-area-7">
+            <div class="container">
+                <div class=" footer-top">
+                    <div class="row trip-stat gy-md-0 gy-4">
+                        <div class="col-xl-2 col-md-3 col-sm-6 offset-xl-2">
+                            <img src="img/my_trips/trip-stat-1.svg" alt="">
+                            <h5><span class="counter">7</span> Continents</h5>
+                            <p>Explored</p>
+                        </div>
+                        <div class="col-xl-2 col-md-3 col-sm-6">
+                            <img src="img/my_trips/traip-stat-2.svg" alt="">
+                            <h5><span class="counter">30</span> Countries</h5>
+                            <p>Visited</p>
+                        </div>
+                        <div class="col-xl-2 col-md-3 col-sm-6">
+                            <img src="img/my_trips/trip-stat-3.svg" alt="">
+                            <h5><span class="counter">250,000</span> KM</h5>
+                            <p>Traveled</p>
+                        </div>
+                        <div class="col-xl-2 col-md-3 col-sm-6">
+                            <img src="img/my_trips/ttrip-stat-4.svg" alt="">
+                            <h5><span class="counter">15,000</span> Photos</h5>
+                            <p>Taken</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="social-link">
+                            <a href="#"><i class="fab fa-facebook-f"></i> </a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i> </a>
+                            <a href="#"><i class="fab fa-behance"></i> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2024 Allfolio. All Rights Reserved</p>
+
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+    <!-- Back to top button -->
+    <a id="back-to-top" title="Back to Top"></a>
+
+    <!-- JS here -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            var mapOptions = {
+                zoom: 11,
+
+                center: new google.maps.LatLng(40.6700, -73.9400),
+                styles: [{ "featureType": "all", "elementType": "labels.text", "stylers": [{ "color": "#878787" }] }, { "featureType": "all", "elementType": "labels.text.stroke", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f9f5ed" }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "color": "#f5f5f5" }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#c9c9c9" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#aee0f4" }] }]
+            };
+            var mapElement = document.getElementById('banner_map');
+
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(40.6700, -73.9400),
+                map: map,
+                title: 'Allfolio!'
+            });
+        }
+    </script>
+</body>
+
+</html>

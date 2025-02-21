@@ -1,0 +1,297 @@
+.faq-area {
+  z-index: 1;
+
+  :is(.shape, .shape2) {
+    z-index: -1;
+  }
+}
+
+.faq-image {
+  margin-top: 65px;
+
+  .play-button {
+    a {
+      background: $white;
+      color: $brand_color;
+      @include circle-size(48px);
+      font-size: 16px;
+      padding-top: 0;
+      position: relative;
+      z-index: 1;
+
+      @include before {
+        top: -6px;
+        left: -6px;
+        opacity: 0.8;
+        @include circle-size(60px);
+        z-index: -1;
+        animation: pulse-white 2s infinite;
+      }
+    }
+  }
+}
+
+.faq-right-content {
+  padding: 30px 20px;
+  background: #ffffff;
+  box-shadow: 0 40px 80px -20px rgba(131, 146, 167, 0.3);
+  border-radius: 10px;
+  margin-top: 50px;
+
+  @include md {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+
+  @include xl {
+    padding: 30px 60px;
+    margin-left: 40px;
+  }
+}
+
+.accordion-flush {
+  .faq-accordion-item {
+    border: none;
+  }
+}
+
+.faq-accordion-item {
+  h2 {
+    line-height: 1;
+    button:hover {
+      color: $brand_color;
+    }
+  }
+
+  button {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: $ibm;
+    padding: 18px 0;
+    color: $black_500;
+
+    @include focus {
+      box-shadow: none;
+    }
+
+    &:not(.collapsed) {
+      background: transparent;
+      color: $black_900;
+      box-shadow: none;
+
+      @include after {
+        background: transparent;
+        margin-right: 6px;
+      }
+    }
+
+    @include after {
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 16px;
+      color: $black_900;
+      @include property;
+      background: transparent;
+    }
+  }
+
+  .accordion-body {
+    padding: 10px 0 15px;
+  }
+}
+
+.accordion-flush-2 {
+  .accordion-item {
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+    border-radius: 10px;
+    position: relative;
+    padding: 35px 60px 60px;
+    z-index: 1;
+    margin-top: 30px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .accordion-collapse {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      background-color: var(--black_800);
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+    }
+    &.show {
+      &::before,
+      .accordion-body {
+        opacity: 1;
+      }
+    }
+  }
+
+  .accordion-header {
+    position: relative;
+
+    h2 {
+      max-width: 630px;
+      margin-bottom: 0;
+      color: #fff;
+      cursor: pointer;
+      &.collapsed {
+        color: $black_900;
+        span {
+          right: 0;
+          transform: translateY(-50%) rotate(0deg);
+          &::before {
+            background: $black_900;
+          }
+        }
+      }
+
+      span {
+        position: absolute;
+        font-size: 17px;
+        top: 50%;
+        right: 27px;
+        line-height: initial;
+        transition: 0.3s ease-out;
+        transform: translateY(100%) rotate(90deg);
+        &::before,
+        &::after {
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          opacity: 0.5;
+        }
+        &::before {
+          content: "";
+          top: 50%;
+          position: absolute;
+          width: 75px;
+          height: 2px;
+          background: #fff;
+          left: auto;
+          right: 3px;
+          transform: translateY(-50%);
+        }
+        &::after {
+          content: "\f054";
+        }
+      }
+    }
+  }
+  .accordion-body {
+    padding: 0;
+    margin-top: 70px;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+    p {
+      max-width: 310px;
+      margin-left: 60px;
+      color: #fff;
+    }
+  }
+}
+.accordion-flush-3 {
+  .accordion-item {
+    border-radius: 6px;
+    overflow: hidden;
+    border: none;
+    margin-top: 24px;
+    &:first-child {
+      margin-top: 0;
+    }
+    .accordion-button {
+      padding: 24px 35px 28px 44px;
+      font-family: $ibm;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 30px;
+      border: none;
+      color: #fff;
+      box-shadow: none;
+      background-color: $black_900;
+      display: flex;
+      align-items: baseline;
+      span {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      &.collapsed {
+        color: $black_800;
+        background-color: #f5f5f5;
+      }
+
+      &:not(.collapsed) {
+        &::after {
+          content: "\f068";
+          transform: rotate(0deg);
+          color: #fff;
+        }
+      }
+
+      &::after {
+        content: "\f067";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        background: none;
+        font-size: 18px;
+        color: $black_500;
+      }
+    }
+    .accordion-body {
+      background-color: $black_900;
+      padding-top: 0;
+      padding-right: 48px;
+      p {
+        font-family: $ibm;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 27px;
+        color: #fff;
+        margin-left: 83px;
+      }
+    }
+  }
+}
+.faq-nav-tab-content {
+  margin-left: 55px;
+}
+.faq-navigation-tab {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 30px 20px;
+
+  h3 {
+    font-family: $ibm;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+  }
+  .nav-link {
+    display: block;
+    font-size: 16px;
+    line-height: 40px;
+    color: $p_color;
+    width: 100%;
+    border: none !important;
+    cursor: pointer;
+    padding: 0 15px;
+    &.active {
+      background-color: rgba(#d92c0a, 0.1);
+    }
+    &:hover {
+      color: $brand_color;
+    }
+  }
+}

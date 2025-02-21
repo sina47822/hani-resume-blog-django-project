@@ -11,14 +11,14 @@ from account.validators import validate_iranian_cellphone_number
 class UserType(models.IntegerChoices):
     hamgam = 1, _("hamgam")
     hamrah = 2, _("hamrah")
-    admin = 3, _("admin")
+    superuser = 3, _("superuser")
 
 class UserManager(BaseUserManager):
     """
     Custom user model manager where email is the unique identifiers
     for authentication instead of usernames.
     """
-    def create_user(self, email, phone_number=None, password=None, **extra_fields):
+    def create_user(self, email, password, phone_number=None, **extra_fields):
         """
         Create and save a User with the given phone number and password.
         """
@@ -26,12 +26,11 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError(_("The Email must be set"))
         email = self.normalize_email(email)
-        
-        user = self.model(phone_number=phone_number, email=email, **extra_fields)
+        user = self.model(email=email,phone_number=phone_number,  **extra_fields)
         user.set_password(password)
         user.save()
         return user
-    def create_superuser(self, email, phone_number=None, password=None, **extra_fields):
+    def create_superuser(self, email, password, phone_number=None, **extra_fields):
         """
         Create and save a SuperUser with the given email and password.
         """
@@ -39,7 +38,7 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault("is_superuser", True)
         extra_fields.setdefault("is_active", True)
         extra_fields.setdefault("is_verified", True)
-        extra_fields.setdefault("type", UserType.admin.value)
+        extra_fields.setdefault("type", UserType.superuser.value)
 
         if extra_fields.get("is_staff") is not True:
             raise ValueError(_("Superuser must have is_staff=True."))
@@ -53,10 +52,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=200,blank=True) 
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     phone_number = models.CharField(validators=[phone_regex],max_length=200,blank=True,null=True) 
-    is_staff = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_verified = models.BooleanField(default=False)
-    is_admin = models.BooleanField(default=True)
     type = models.IntegerField(
         choices=UserType.choices, default=UserType.hamgam.value)
 
@@ -67,6 +65,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = []
 
     objects = UserManager()
+    
     def __str__(self):
         return self.email
 
@@ -75,8 +74,8 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     description = HTMLField(_('زندگی نامه'),null = True, blank = True )
-    # work = 
-    # interest = 
+    work = models.CharField(_('شغل'),max_length=255,null = True, blank = True)
+    interest = models.CharField(_('علایق'),max_length=255,null = True, blank = True)
     avatar = models.ImageField(upload_to="profile/",default="profile/default.png")
     phone_number = models.CharField(max_length=12, validators=[validate_iranian_cellphone_number])
 

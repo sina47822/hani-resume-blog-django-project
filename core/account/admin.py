@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import Profile
 from django.contrib.auth import get_user_model
+from django.contrib.sessions.models import Session
 
 User = get_user_model()
 
@@ -12,7 +13,7 @@ class CustomUserAdmin(UserAdmin):
     """
 
     model = User
-    list_display = ("id","email","type","phone_number", "is_superuser", "is_active", "is_verified")
+    list_display = ("id","first_name","last_name","email","type","phone_number", "is_superuser", "is_active", "is_verified")
     list_filter = ("email","phone_number","type", "is_superuser", "is_active", "is_verified")
     searching_fields = ("email","phone_number")
     ordering = ("email","phone_number",)
@@ -75,7 +76,6 @@ class CustomProfileAdmin(admin.ModelAdmin):
 admin.site.register(Profile,CustomProfileAdmin)
 admin.site.register(User, CustomUserAdmin)
 
-from django.contrib.sessions.models import Session
 class SessionAdmin(admin.ModelAdmin):
     def _session_data(self, obj):
         return obj.get_decoded()

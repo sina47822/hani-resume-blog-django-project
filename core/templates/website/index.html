@@ -15,7 +15,7 @@
 {% endblock %}
 {% block content %}
     <!-- Banner Section -->
-    <section class="banner-area-4">
+    <section class="banner-area-4 pt-5">
       <div class="container" style="margin-top:50px">
           <div class="row align-items-center">
               <div class="col-xl-8 col-lg-9">
@@ -29,7 +29,7 @@
                           </small>
                       </h1>
                       <p class="wow fadeInUp mt-30" data-wow-delay="0.5s">{{ SITE_DESCRIPTION }}</p>
-                      <div class="allfolio-btn-group">
+                      <div class="allfolio-btn-group d-flex align-items-center">
                           <a href="{% url 'website:contact'%}" class="theme-btn btn-big">{% translate "با من در ارتباط باشید" %}</a>
                           <a href="{% url 'website:resume'%}" class="theme-btn theme-btn-outline-white btn-big">{% translate "دریافت رزومه" %}</a>
                       </div>
@@ -62,9 +62,9 @@
     </section>
     <!-- Banner Section -->
     <section class="banner-area-2 banner-area-7" id="home">
-        <div class="container">
+        <div class="container m-w-80">
             <div class="row">
-            <div class="col-lg-7 text-center text-lg-start">
+            <div class="d-flex align-items-center col-lg-7 text-center text-lg-start">
                 <div class="banner-content">
                     <h1 class="site-title wow fadeInUp"><a href="/" title="{{ SITE_NAME }}" rel="home">{{ SITE_NAME }}</a>
                     </h1>
@@ -104,12 +104,12 @@
     <!-- Banner Section -->
     <!-- About Section -->
     <section class="about-area-6 position-relative section-padding-xl">
-        <div class="container">
+        <div class="container m-w-80">
           <div class="row align-content-center">
             <div class="col-12 col-lg-6 col-xl-5">
               <div class="about-left-content wow fadeInUp">
                 <h2>{% translate 'من هانی ادیب آزاد هستم...' %} <br /><span>{% translate '' %}</span></h2>
-                <p class="pt-20">
+                <p class="pt-2">
                   {% blocktranslate trimmed %}
                   برای شناخت بهتر باید عرض کنم که یک وجه دیگر هم دارم و آن علاقه به همراهی، راهنمایی و مشاوره به افرادی ست که مایل هستند کسب و کار خودشان رو بسازن، در دنیای کارمندی خودشون پیشرفت کنن، شرایط کسب و کار خود را بهبود بدهن و یا حتا تفکرشون را برای ارتقا کیفیت زندگی تغییر بدهن. این همان کوچینگی است که این روزها بسیار مد شده و البته بسیاری هم به حق و نا حق کوچ و مربی و راهبر شده اند، من هم یکی از صدها، با این تفاوت که من اصول موفقیت در کسب و کار را تجربه کرده ام و گام به گام پیش رفتم و موفق شدم شرکتی رو بیش از 15 سال اداره کنم، تثبیت کنم و ارتقا بخشم. به تنهایی انجامش ندادم اما شما هم تنها نیستید، اگر در کنار همراهی خانواده و دوستان و اراده خودتون اگر، تجربه  فردی سرد و گرم چشیده رو هم در کنارتون داشته باشین، بسیار امیدوار خواهم بود که شما هم موفق شوید و بدین طریق دیگر نیازی به اختراع مجدد چرخ را نداشته باشید بلکه چرخ کارآمد خودتون رو بهینه کنین.  
                   {% endblocktranslate %}
@@ -159,15 +159,12 @@
             </div>
           </div>
         </div>
-  
-        <img src="{% static 'img/home_eight/shape/shape2.png' %}" alt="Shape" class="shape position-absolute top-0 wow fadeInDown"
-          data-wow-delay="0.5s" />
     </section>
       <!-- About Section -->
   
     <!-- Service Section -->
     <section class="service-area-2 position-relative section-padding-xl bg-white-100">
-      <div class="container">
+      <div class="container m-w-80">
         <div class="row">
           <div class="col-12 col-md-9 col-lg-6 col-xl-5">
             <div class="section-title wow fadeInUp">
@@ -234,7 +231,7 @@
 
     <!-- FAQs Section -->
     <section class="faq-area position-relative section-padding-xl">
-      <div class="container">
+      <div class="container m-w-90">
         <div class="row">
           <div class="col-md-6 col-xl-5 wow fadeInLeft">
             <div class="faq-left-content">
@@ -301,7 +298,7 @@
 
     <!-- Testimonials Section -->
     <section class="testimonial-area testimonial-area-8 bg-white-100 section-padding-xl">
-      <div class="container">
+      <div class="container m-w-80">
         <div class="row">
           <div class="col-12">
             <div class="section-title wow fadeInUp">
@@ -414,7 +411,7 @@
 
     <!-- Timelines Section -->
     <section class="timeline-area pt-105 pb-100">
-        <div class="container">
+        <div class="container m-w-80">
             <div class="section-title text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h2>{% translate 'فرآیند مشاوره و راهبری:' %}</h2>
             </div>

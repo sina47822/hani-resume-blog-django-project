@@ -1,0 +1,143 @@
+.pricing-area {
+  background: #f5f5f5;
+}
+
+.pricing-item {
+  --shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  background: $white;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: var(--shadow);
+  @include property;
+  margin-top: 30px;
+
+  &.shadow-sm {
+    box-shadow: var(--shadow);
+  }
+
+  &.shadow-md {
+    --shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+  }
+
+  @include lg {
+    padding: 60px 20px;
+  }
+
+  @include hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+  }
+
+  .pricing-icon {
+    @include size(60px);
+    margin: 0 auto 15px;
+  }
+
+  .price {
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 700;
+    font-family: $ibm;
+    color: $brand_color;
+    margin-top: 15px;
+    display: block;
+  }
+
+  .pricing-list {
+    margin-top: 30px;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 0;
+      line-height: 1.625;
+      margin-top: 10px;
+    }
+  }
+
+  :is(.btn-outline-red, .btn-red) {
+    --btn-px: 42px;
+  }
+
+  .mt-54 {
+    margin-top: 54px;
+  }
+}
+
+.pricing-area-2 {
+  background-image: linear-gradient(to bottom left, #f7f3df, #f3f7df);
+  padding-top: 128px;
+  padding-bottom: 150px;
+}
+
+.pricing-item-2 {
+  border-radius: 8px;
+  padding: 60px 22px 40px 23px;
+  text-align: center;
+  box-shadow: 30px 0 40px 0 #17161a1a;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $brand_color;
+    h5,
+    p {
+      color: #fff;
+    }
+    .purchase-btn {
+      box-shadow: 20px 0 40px 0 #17161a1a;
+
+      color: $brand_color;
+      gap: 10px;
+      span {
+        display: block;
+      }
+    }
+    img {
+      filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(234deg)
+        brightness(104%) contrast(101%);
+    }
+  }
+  h5 {
+    font-family: $ibm;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 40px;
+  }
+  p {
+    margin-top: 11px;
+    margin-bottom: 52px;
+    transition: all 0.3s ease-in-out;
+  }
+  .purchase-btn {
+    font-family: $ibm;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+    border-radius: 5px;
+    padding: 10px 30px;
+    display: inline-flex;
+    background-color: #fff;
+    align-items: center;
+    color: $black_900;
+    gap: 10px;
+
+    transition: all 0.3s ease-in-out;
+    span {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 18px;
+      color: $brand_color;
+      display: none;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

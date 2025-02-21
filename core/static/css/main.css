@@ -1511,6 +1511,7 @@ p kbd {
 
 .navbar-toggler {
   outline: none;
+  border: none;
 }
 .navbar-toggler:focus {
   box-shadow: none;
@@ -1639,8 +1640,8 @@ p kbd {
   background: #fff;
   padding: 20px 0;
   overflow-x: hidden;
-  left: 0;
-  right: auto;
+  left: auto;
+  right: 0;
 }
 .side_menu .mobile_menu_header {
   display: flex;
@@ -8905,7 +8906,7 @@ svg.radial-progress circle.incomplete {
 .timeline-wrapper.timeline-inverted .timeline-panel {
   margin-left: auto;
   margin-right: 10%;
-  text-align: left;
+  text-align: right;
 }
 .timeline-wrapper.timeline-inverted .timeline-panel p::after {
   left: inherit;
@@ -9213,7 +9214,7 @@ svg.radial-progress circle.incomplete {
 }
 @media screen and (min-width: 768px) {
   .cta-area-3 {
-    margin-left: 120px;
+    margin-left: 0;
   }
 }
 .cta-area-3 .cta-text {
@@ -16490,3 +16491,19 @@ ul.ordered-list li::before {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=main.css.map */
+.dynamic-svg {
+  fill: #ccc; /* رنگ پیشفرض سفید */
+  transition: all 0.3s ease; /* اثر انتقال نرم */
+}
+.navbar_fixed .dynamic-svg {
+  fill: #333; /* رنگ پیشفرض سفید */
+}
+#preloader .loader-svg{
+  fill: #333;
+}
+
+@media (max-width: 700px) {
+  .about-area-6 .row.align-content-center {
+    padding-top: 200px;
+  }
+}

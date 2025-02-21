@@ -2,18 +2,424 @@
 {% load static %}
 {% load i18n %}
 {% load cache %}
-{% block header %}
 
-    <title>About Us</title>
-    <meta name="description" content="{{ SITE_SEO_DESCRIPTION }}"/>
-    <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
-    <meta property="og:type" content="blog"/>
-    <meta property="og:title" content="{{ SITE_NAME }}"/>
-    <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
-    <meta property="og:url" content="{{ SITE_BASE_URL }}"/>
-    <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+{% block header %}
+    <title>{{ SITE_NAME }} | درباره ما</title>
+    <meta name="description" content="{% translate 'درباره سایت و تیم ما' %}" />
+    <meta name="keywords" content="درباره, ما, اطلاعات" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{% translate 'درباره ما' %}" />
+    <meta property="og:description" content="{% translate 'درباره سایت و تیم ما' %}" />
+    <meta property="og:url" content="{{ SITE_BASE_URL }}/about/" />
+    <meta property="og:site_name" content="{{ SITE_NAME }}" />
 {% endblock %}
+
 {% block content %}
-    <h1>About Us</h1>
-    <p>This is the About Us page content.</p>
+    <section class="banner-area-2 banner_animation_02 about-page-banner pt-lg-175 pt-80 pb-80 pb-lg-175" id="home">
+        <div class="container">
+            <div class="row pt-85 pb-60 align-items-center">
+                <div class="col-xl-8 offset-xl-2 text-center">
+                    <div class="banner-content">
+                        <h1 class="wow fadeInUp" data-wow-delay="0.5s">{% translate "سلام !" %} <span class="line-stroke-title wow">{% translate "درباره ما" %}</span></h1>
+                        <p class="mt-30 wow fadeInUp" data-wow-delay="0.6s">{% translate "بنیان‌گذاران کسب و کارها بعد از مدتی بیش از حد درگیر کسب‌وکار هستند و زمان یا منابع لازم برای ایجاد خلافیت در بلندمدت را ندارند من اینجا هستم تا تغییری ایجاد کنم." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section for About Page -->
+    <section class="banner-area-4 pt-5" style=`background: url('{% static 'img/about-banner.jpg' %}') no-repeat center center; background-size: cover;`>
+        <div class="container" style="margin-top:50px">
+            <div class="row align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="display-4" style="color: white;">{% translate "درباره من... هانی" %}</h1>
+                    <p class="lead" style="color: #ccc;">
+                        {% translate "نوشتن از خودم همیشه برایم چالش برانگیز بوده، چراکه باید بخش هایی را پررنگ و بخش هایی دیگر را کمرنگ می کردم یا مواردی را جلوی چشم خواننده می آوردم و در حین حال مواردی دیگر را از جلوی چشمانش پنهان می ساختم، صادق بودن سخت می شد و نگرانی از تاثیر و قضاوت سخت تر. به هر سو بدون معرفی هم نمی شد انتظار همان اندک شناخت را هم داشت لذا در متن زیر سعی کردم کمی با آرامش و احساس نزدیکی با مخاطب به نثری خودمانی روی بیاورم و شروع کنم به معرفی خودم و در آنچه در جلوی چشمان شما قرار دادم، صادق بودم. " %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <div class="container my-5">
+        <div class="d-flex row">
+            <div class="col-12 text-center pt-5 pb-5">
+                <h2 class="mb-4 text-center">{% translate "من کی هستم؟" %}</h2>
+            </div>
+        
+            <div class="col-md-4">
+                <img src="{%static 'img/hani-pic.png'%}" alt="" srcset="">
+            </div>
+            <div class="col-md-8">
+                <p>
+                    {% blocktranslate %}
+                    و اما من:  " هانی ادیب آزاد "
+                        در 1356 در مشهد متولد شدم، دبستان را در مدرسه ای گذراندم که تازه تاسیس شده بود، دبستان سجاد، هنوز دو سال از تاسیس راهنمایی ملت نگذشته بود که بدانجا رفتم و در دبیرستان هدف هم جزو اولین گروه محصلین آنجا بودم، ریاضی می خوندم، جالب اینجاست که سه سال از تاسیس رشته برق – قدرت در دانشگاه آزاد بجنورد می گذشت که بدانجا رفتم و با زحمت مدرک کارشناسی گرفتم و خارج شدم. 
+                        کار در کارخانه سنگ کوبی و آسفالت سازی اولین تجربه کاریم بود، پرانرژی و مشتاق کار کردن بودم که در کمال تعجب آن روزهایم بیش از سه ماه طول نکشید و اخراج شدم،
+                    {% endblocktranslate %}
+                </p>
+                <p>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapse1" role="button" aria-expanded="false" aria-controls="multiCollapse1">{% translate "بخش اول درباره من" %}</a>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapse2" aria-expanded="false" aria-controls="multiCollapse2">{% translate "بخش دوم درباره من" %}</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapse1 multiCollapse2">{% translate "باز کردن و بستن دو بخش درباره من" %}</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapse1">
+                        <div class="card card-body">
+                            {% blocktranslate %}
+                            ساعت 4:15  بامداد از خواب بیدار می شدم تا بتونم 4:45 دقیقه با کمی پیاده روی به مسیر سرویس کارخانه برسم، یک جیپ قدیمی که من و تعدادی دیگر از کارگرها را در مسیر خودش سوار کند قبل 6 بامداد و حدود طلوع خورشید می رسیدیم کارگاه و کار شروع می شد، بلافاصله بدون صرف حتا یک چای، مسئولیتم در خصوص تجهیزات برقی بود و از تابلوهای برق گرفته تا موتورها، از همان ابتدا با عدم توجه کارگرها و اپراتورها به تنظیمات حفاظتی پی بردم که عموما برای اینکه کار نخوابد مثلا رله بیش باری را یا قطع می کردن یا روی حداکثر می گذاشتن و بدین ترتیب موتور تا سرحد مرگ کار می کرد و البته پس از مدتی نیز سرحد و را رد می کرد و می سوخت.
+                            
+                            آمار موتورهای سوخته بالا بود. 
+                            تنظیمات را اصلاح کردم و رله های از مدار خارج شده را به مدار برگرداندم و از اپراتورها خواستم که به هیچ وجه خودشون به تابلو دست نزنن و هر چی پیش آمد به من بگن. موتورها در شرایط محیطی پر گرد و خاک کار می کردن و روی آنها را لایه ای تقریبا ضخیم از خاک و گل آغشته به روغن گرفته بود، موتورها اصلا جای تنفس نداشتند و حسابی در گرمای تولید شده خودشون گرفتار شده بودند و این یعنی با بار کم هم اگر کار می کردند، دمای داخلی بالا می رفت و تلفات زیاد می شد و جریان کشی افزایش می یافت و در آخر سر موتور می سوخت.
+                            تمامی موتورها را تمیز کردم و به طبع آن جریان کارکرد موتورها افت کرد حالا هم اپراتورها از کار راضی بودند و هم موتورها.
+    
+    
+                            ساعت 8 صبحانه می خوردیم و ساعت 2 ناهار ، والا در اون مدت که من آنجا بودم تقریبا هر روز عدس پلو داشتیم، چرا ؟ نمی دونم اما هرچی بود من کاری با این موارد نداشتم و برام کار از هر چیزی مهم تر بود، خوشحال بودم که کار می کردم. با همه روابط خوبی برقرار کرده بودم من جمله مسئول برق آنجا که در ابتدا حسابی پز اطلاعات خوبی که از کار و دستگاه ها و موتورها را داشت به من داد و با چند سئوال سخت به من فهموند که رئیس کیه، من هم قبول داشتم و نگرانی از بابت ریاست ایشون نداشتم، البته چاره ای هم نبود باید جلوی ایجاد رقابت و تنش بی مورد را می گرفتم.
+                            دو سه هفته ایی که گذشت وقتی مسئول برق برای مراسم دامادی اش چند روزی مرخصی گرفته بود عزمم را جزم کردم و شروع کردم به مرتب و تمیز کردن انبار کالای برق کارخانه. یک اتاق نسبتا بزرگ که کلی قفسه و کالا داشت، درهم و برهم. تمامی آنها را بیرون آوردم، جارو و گردگیری کردم و تجهیزات و لوازم را دسته بندی کردم و چیدمان رو شروع.
+                            وقتی مسئول برق از مرخصی برگشت و وارد انبار شد شوکه شد، پرسید تو اینکار رو کردی، بعد زیر لب ادامه داد " خیلی وقت بود می خواستم تمیزش کنم."
+                            
+                            {% endblocktranslate %}
+
+                        
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapse2">
+                        <div class="card card-body">
+                            {% blocktranslate %}
+
+                            حدود ساعت 6 بعد از ظهر از کارخانه به خونه برمی گشتیم و 7 شب خونه بودم. قبل از طلوع آفتاب می رفتم بیرون و بعد از غروب می رسیدم خونه. پر از خاک و گرد و غبار، اما با انرژی؛
+                            
+                            دیگه حتا فرصت دیدن تلویزیون را هم نداشتم، دوش و شام و .... خواب.
+                            
+                            یک روز در حین دیدار مالک کارخانه برق بخشی از تجهیزات رفت، علت عمل کردن کلید تابلوی توزیع آن قسمت بود، کلی گشتم و تک تک تجهیزات را بررسی کردم اما عیبی ندیدم که نشون بده چرا کلید عمل کرده، به ناچار مسیر کابل رو بررسی کردم و در میانه راه  چشمم به کابلی دیگه خورد که از کابل اصلی منشعب شده بود و قبلا ندیده بودم کابلی که بدون رعایت ایمنی بر روی زمین کشیده شده بود و براثر عبور وسایط نقلیه سنگین، اتصال کوتاه کرده بود، کابل رو تعمیر کردم و رفتم که ببینم سر دیگه کابل کجاست.
+                            در کمال تعجب در یکی از سوله ها دیدم مالک در یک تابلو برق را باز کرده و دارد کارهایی می کند، رفتم جلو پرسیدم می تونم کمک کنم که جواب رد داد، ایستادم کنار اما وقتی دیدم تنظیمات رو بهم می ریزه ازش خواستم که بگن چکاری دارن تا من براشون انجام بدم، وقتی کاری که می خواست انجام بدن را به راحتی انجام دادم از کابل جدید پرسیدم و گفتن که خودشون خواستن که کابل کشیده بشه،  من هم ازشون درخواست کردم که با من هماهنگ بشن تا مشکلی پیش نیاد و مثل امروز هم برق برای مدتی نره و کارخانه نخوابه به قولی خودمونی لطفاَ دست نزنید. 
+    
+    
+                            نگاهم کردن و چیزی نگفتن،  یکی دو روز بعد با من تماس گرفتن و عذرم را خواستن. 
+                            این می شود نمونه ایی عالی از مثال زبان سرخ سر سبز دهد بر باد. 
+                            این داستان اولین تجربه کاری ام بود که با اشتیاق بالا و شوق و ذوق براش زمان و انرژی می گذاشتم، خوب بود و از اینکه بعنوان مهندس برق کاری کردم که شرایط دستگاه ها و همچنین کارکرد اپراتورها بهبود پیدا کنه راضی ام، تجربه مفیدی بود و از تلاشی که کردم خوشنودم. اون موقع ها از اینکه اخراج شده بودم خیلی ناراحت و تا حدودی خشمگین بودم اما حالا نه، سال هاست که دیگر ناراحت آن اخراج نیستم و از اینکه در آنجا پایبند نشدم خوشحالم.        
+                            {% endblocktranslate %}
+                        
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-5">{% translate " ماموریت ما " %}</h3>
+                <p>
+                    {% blocktranslate %}
+                    ماموریت ما ارائه خدمات با کیفیت و ایجاد ارزش افزوده برای مشتریان و جامعه است. ما به دنبال ایجاد یک تجربه کاربری بی‌نظیر و پایدار در ارائه خدمات خود هستیم.
+                    {% endblocktranslate %}
+                </p>
+                <h3 class="mt-5">{% translate "چشم انداز ما" %}</h3>
+                <p>
+                    {% blocktranslate %}
+                    چشم انداز ما تبدیل شدن به پیشرو در ارائه خدمات دیجیتال و فناوری اطلاعات در سطح بین‌المللی است.
+                    {% endblocktranslate %}
+                </p>
+            </div>
+
+            <div class="col-12 text-center pt-5 pb-5">
+                <h2 class="mb-4 text-center">{% translate "علاقه مندی به کوچینگ" %}</h2>
+            </div>
+            <div class="col-md-8">
+                <p>
+                    {% blocktranslate %}
+                    برای شناخت بهتر باید عرض کنم که یک وجه دیگر هم دارم و آن علاقه به همراهی، راهنمایی و مشاوره با افرادی ست که مایل هستند کسب و کار خودشان را بسازند، در دنیای کارمندی خودشان پیشرفت کنند، شرایط کسب و کار خود را بهبود بدهند و یا حتا تفکرشون را برای ارتقا کیفیت زندگی تغییر بدهند. این همان کوچینگی است که این روزها بسیار مد شده و البته بسیاری هم به حق و نا حق کوچ شده اند، 
+                    
+                    من هم یکی از صدها، با این تفاوت که من اصول موفقیت در کسب و کار را تجربه کرده ام و گام به گام پیش رفتم و موفق شدم شرکتی را بیش از 15 سال اداره کنم، تثبیت کنم و ارتقا بخشم.
+                    
+                    به تنهایی انجامش ندادم اما شما هم تنها نیستید، اگر در کنار همراهی خانواده و دوستان و اراده خودتون اگر، تجربه من را هم در نظر بگیرید بسیار امیدوارم خواهم بود که شما هم موفق شوید و نیازی به اختراع مجدد چرخ را نداشته باشید.
+
+
+                    {% endblocktranslate %}
+                </p>
+                <p>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseAbout1" role="button" aria-expanded="false" aria-controls="multiCollapseAbout1">{% translate "بخش اول " %}</a>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseAbout2" aria-expanded="false" aria-controls="multiCollapseAbout2">{% translate "بخش دوم " %}</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseAbout1 multiCollapseAbout2">{% translate "باز کردن و بستن دو بخش" %}</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseAbout1">
+                        <div class="card card-body">
+                            {% blocktranslate %}
+                            برای راهبری یا همان کوچینگ، فرهنگ و شیوه خودم را دارم و با افتخار تا کنون موفق شدم چند نفری را به ایجاد کسب و کار پایدار یا ارتقاء جایگاه شغلی و یا بهبود کیفیت زندگی راهنمایی کنم، تفکرشون را تغییر بدهم و به آنها امکان روبرو شدن با چالش های دنیای کسب و کار را بیاموزانم، هر چند از اراده و ثبات قدم خود آنها در این راه نمی توان چشم پوشی کرد.
+
+                            با این اوصاف، من مهندس برقی هستم که در صنایع تدریس می کنم،  بازرگانی هستم که با داخل و خارج در تجارت هستم و راهنما و راهبری ام که با مخاطبینم همراهی و هم افزایی دارم.
+        
+                            
+                            راستی اهل کتاب هم هستم و از مطالعه لذت می برم، گاهی دست به قلم می شم و می نویسم، دونده آماتوری هستم که ورزش بخشی از زندگی ام شده هرچند بیشتر برای آمادگی جسمانی و جلوگیری از افت بدنی حاصل از افزایش سن است تا دم دادن عضلات، انگلیسی ام بد نیست اما آلمانی ام افتضاح است.
+                            
+                            {% endblocktranslate %}
+
+                        
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseAbout2">
+                        <div class="card card-body">
+                            {% blocktranslate %}
+
+                            خلاصه، هر آنچه که می توانست مثبت باشد را ارایه دادم و از خصوصیات بدم فاکتور گرفتم تا تصویری جذاب از خودم ارایه بدم و صد البته من هم مثل همه، کلی ضعف و عیب دارم. 
+                            باید اعتراف کنم که از جایگاه کاری و اجتماعی و خانوادگی ام خوشنودم و برای بهبود و ارتقا بیشتر آنها تلاش می کنم.
+                            در هر حال فعلا به این معرفی مثبت انگارانه از خودم بسنده می کنم تا وقتی که همدیگر را دیدیم و یا با دوستان و اطرافیانم  برخورد  داشتید بیشتر به جنبه های دیگر شخصیت من پی ببرید ... در کل نیازی به این همه مداقه نیست و همین اندک اطلاعات به قدر کفایت برای ارتباط " کاری " اولیه راه گشا است، مگر اینکه به ارتباط عمیق تر در فرآیند راهبری نیاز باشد که در زمان خودش بیشتر با هم بدان خواهیم پرداخت و بیشتر با هم آشنا خواهیم شد. 
+                            
+
+                            {% endblocktranslate %}
+                        
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <img src="{%static 'img/hani-pic-2.png'%}" alt="" srcset="" style="margin-top: -100px;">
+            </div>
+        </div>
+    </div>
+                    <!-- CTA Section -->
+
+                    <section class="cta-area-2 text-center pt-145 pb-145 varient-2" id="contact">
+                        <div class="bg-shape">
+                            <div class="shape">
+                                <img data-parallax='{"x": -100, "y": 0}' src="{% static 'img/about_page/cta-shape.png' %}" alt="">
+                            </div>
+                            <div class="shape">
+                                <img data-parallax='{"x": 130, "y": 50}' src="{% static 'img/home_two/cta-wave.png' %}" alt="">
+                            </div>
+                            <div class="shape">
+                                <img data-parallax='{"x": -100, "y": 0}' src="{% static 'img/about_page/cta-shape.png' %}" alt="">
+                            </div>
+                            <div class="shape">
+                                <img data-parallax='{"x": -110, "y": -70}' src="{% static 'img/home_two/cta-wave.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-9 mx-auto">
+                                    <div class="section-title mb-15 wow fadeInUp" data-wow-delay="0.3s">
+                                        <span class="subtitle">{% translate "پروژه‌ای دارید؟ با ما صحبت کنید" %}</span>
+                                        <h2>info@allfolio.agency</h2>
+                                    </div>
+                                    <a class="theme-btn theme-btn-outline mt-5 wow fadeInUp" data-wow-delay="0.5s"
+                                        href="{%url 'website:contact'%}">{% translate "تماس با ما" %}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- CTA Section -->
+
+            <!-- About Section -->
+            <section class="about-area-2 section-padding">
+                <div class="container position-relative">
+                    <div class="row">
+                        <div class="col-xl-9">
+                            <div class="section-title about-section-title mb-20 wow fadeInUp" data-wow-delay="0.4s">
+                                <span class="subtitle red">Top rated Elite Author Team at Envato</span>
+                                <h2><span class="line-stroke-title-2 wow">We design, develop</span>, launch and support your
+                                    web & mobile products.</h2>
+                                <p>We deliver digital products and outstanding experience. You can rely on our design
+                                    expertise
+                                    and development knowledge. Our team will craft a future-forward solution tailored to
+                                    your
+                                    business needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="about-list-group wow fadeInUp" data-wow-delay="0.2s">
+                                <ul>
+                                    <li>UX/UI Design</li>
+                                    <li>Visual Identity</li>
+                                    <li>Interaction Design</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="about-list-group wow fadeInUp" data-wow-delay="0.4s">
+                                <ul>
+                                    <li>Prototyping</li>
+                                    <li>Illustration</li>
+                                    <li>Brand Strategy</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="about-list-group wow fadeInUp" data-wow-delay="0.6s">
+                                <ul>
+                                    <li>Animations</li>
+                                    <li>Front-end</li>
+                                    <li>Web Development</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="about-list-group wow fadeInUp" data-wow-delay="0.8s">
+                                <ul>
+                                    <li>App Development</li>
+                                    <li>WordPress</li>
+                                    <li>Analytics / Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Section -->
+    
+            <!-- Our Mission Section -->
+            <section class="our-mission-area bg-white-100 section-padding">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-xl-5">
+                            <div class="mission-left-content wow fadeInLeft">
+                                <div class="section-title">
+                                    <span class="subtitle red">Our Mission</span>
+                                    <h2>We strive for <span class="line-stroke-title-2 wow">smiles</span></h2>
+                                    <p>Making people smile gets us out of bed every morning. Through thoughtful design, we
+                                        create delightful digital experiences that make life simpler and more enjoyable.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-7">
+                            <div class="mission-right-content wow fadeInRight" data-wow-delay="0.2s">
+                                <div class="mission-right-img text-center">
+                                    <img src="img/hand.png" alt="mission">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Our Mission Section -->
+    
+            <!-- Feature Section -->
+            <section class="feature-section section-padding">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 col-xl-5">
+                            <div class="feature-left-content wow fadeInLeft" data-wow-delay="0.2s">
+                                <div class="feature-img">
+                                    <img src="img/about_page/image.png" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-6 offset-xl-1">
+                            <div class="feature-right-content wow fadeInRight" data-wow-delay="0.4s">
+                                <div class="section-title">
+                                    <span class="subtitle red">Our approachs</span>
+                                    <h2 class="mb-20">Why you should <span class="line-stroke-title-2 wow">choose us</span>.
+                                    </h2>
+                                    <p>We deliver digital products and outstanding experience. You can rely on our design
+                                        expertise and development knowledge. Our team will craft a future-forward solution
+                                        tailored to your business needs.</p>
+                                </div>
+                                <div class="counter-section">
+                                    <div class="counter-item">
+                                        <h3><span class="counter">99</span><sub>%</sub></h3>
+                                        <span class="counter-title">Satisfaction Rate</span>
+                                    </div>
+                                    <div class="counter-item">
+                                        <h3><span class="counter">500</span><sub>+</sub></h3>
+                                        <span class="counter-title">Completed Project</span>
+                                    </div>
+                                    <div class="counter-item">
+                                        <h3><span class="counter">25</span><sub>+</sub></h3>
+                                        <span class="counter-title">Team Members</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Feature Section -->
+    
+            <!-- Team Section -->
+            <section class="team-section section-padding">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="section-title wow fadeInLeft" data-wow-delay="0.2s">
+                                <span class="subtitle red">our team members</span>
+                                <h2>Our <span class="line-stroke-title-2 wow">talented team</span> of designers
+                                    and developers.</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="section-title wow fadeInRight" data-wow-delay="0.4s">
+                                <p>Together, we bring expertise from across industries and verticals to develop
+                                    forward-thinking strategies and lead award-winning campaigns for the world’s top brands.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-wrapper mt-40">
+                        <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="team-content">
+                                <h4>Alfonso George</h4>
+                                <a href="#">UI/UX Designer</a>
+                            </div>
+                            <div class="team-img">
+                                <img src="img/team/team.png" alt="Team Image">
+                            </div>
+                        </div>
+                        <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="team-content">
+                                <h4>Alfonso George</h4>
+                                <a href="#">UI/UX Designer</a>
+                            </div>
+                            <div class="team-img">
+                                <img src="img/team/team2.png" alt="Team Image">
+                            </div>
+                        </div>
+                        <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="team-content">
+                                <h4>Alfonso George</h4>
+    
+                                <a href="#">UI/UX Designer</a>
+                            </div>
+                            <div class="team-img">
+                                <img src="img/team/team3.png" alt="Team Image">
+                            </div>
+                        </div>
+                        <div class="team-item wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="team-content">
+                                <h4>Alfonso George</h4>
+    
+                                <a href="#">UI/UX Designer</a>
+                            </div>
+                            <div class="team-img">
+                                <img src="img/team/team4.png" alt="Team Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team Section -->
+
+
+
+            
+            <section class="about-area-2 section-padding">
+                <div class="container position-relative">
+                    <div class="row">
+                        <div class="col-xl-9">
+                            <div class="section-title about-section-title mb-20 wow fadeInUp" data-wow-delay="0.4s">
+                                <span class="subtitle red">{% translate "تیم نویسندگان برتر الیت در Envato" %}</span>
+                                <h2><span class="line-stroke-title-2 wow">{% translate "ما طراحی، توسعه" %}</span> {% translate "و راه‌اندازی می‌کنیم و از محصولات وب و موبایل شما پشتیبانی می‌کنیم." %}</h2>
+                                <p>{% translate "ما محصولات دیجیتال ارائه می‌دهیم و تجربه‌ای فوق‌العاده را تضمین می‌کنیم. می‌توانید به تخصص طراحی و دانش توسعه ما اعتماد کنید. تیم ما راه‌حلی آینده‌نگر را مطابق با نیازهای تجاری شما ارائه خواهد داد." %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 {% endblock %}

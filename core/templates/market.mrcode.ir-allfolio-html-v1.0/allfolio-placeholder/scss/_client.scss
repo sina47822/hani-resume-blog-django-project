@@ -1,0 +1,50 @@
+.client-area {
+  background-color: $black_900;
+  position: relative;
+  text-align: center;
+  .bg-shapes {
+    .shape {
+      position: absolute;
+      &:nth-child(1) {
+        left: 0;
+        top: 0;
+      }
+      &:nth-child(2) {
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  .section-title {
+    color: #f9f9f9;
+    p {
+      color: #f9f9f9;
+    }
+    h2 {
+      color: #f9f9f9;
+    }
+  }
+}
+.client-widget-img {
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 1;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.promoter-brand {
+  .container .border-bottom {
+    padding-top: 130px;
+    border-color: #e6e6e6 !important;
+    padding-bottom: 100px;
+  }
+  p {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}

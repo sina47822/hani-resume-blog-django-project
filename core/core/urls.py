@@ -36,6 +36,7 @@ urlpatterns = [
 
     path('', include(('website.urls' , 'website'), namespace= 'website')),
     path('posts/', include(('blog.urls' , 'blog'), namespace= 'blog')),
+    path('books/', include(('books.urls' , 'books'), namespace= 'books')),
     path('', include('website.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('accounts/', include('account.urls')),

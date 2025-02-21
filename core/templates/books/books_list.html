@@ -1,0 +1,69 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load cache %}
+
+{% block header %}
+    <title>{{ SITE_NAME }} | {{ SITE_DESCRIPTION }}</title>
+    <meta name="description" content="{{ SITE_SEO_DESCRIPTION }}"/>
+    <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
+    <meta property="og:type" content="books"/>
+    <meta property="og:title" content="{{ SITE_NAME }}"/>
+    <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta property="og:url" content="{{ SITE_BASE_URL }}"/>
+    <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+{% endblock %}
+
+{% block content %}
+    <!-- Banner Section -->
+    <section class="banner-area-4 pt-5">
+        <div class="container" style="margin-top:100px">
+            <div class="row align-items-center">
+                <!-- محتوای بنر (مثلاً عنوان خوش‌آمدگویی) -->
+                <div class="col-12 text-center justify-content-center">
+                    <h1 class="display-4" style="color: white;">{% translate "به بخش نکته و کتاب خوش آمدید" %}</h1>
+                    <p class="lead" style="color: #ccc;text-align: center;">{% translate "نکته ها و خلاصه کتاب ها را از دست ندهید در این قسمت سعی کرده ام مفید ترین بخش کتاب را در اختیار شما بگذارم." %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books List Section -->
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">لیست کتابها</h1>
+        <div class="row">
+            {% for book in books %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                            <p class="card-text">{{ book.summary|safe }}</p>
+                            <!-- استفاده از متد get_absolute_url مدل برای لینک به جزئیات پست -->
+                            <a href="{% url 'books:books_detail' book.slug %}" class="btn btn-primary">ادامه مطلب</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <p class="text-muted text-center">هیچ پستی برای نمایش موجود نیست.</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="d-flex align-items-center mx-auto justify-content-center">
+            {% for category in categories %}
+                <a href="{% url 'books:books-category' category.slug %}">{{category.title}}</a>
+            {% empty %}
+                <div class="col-12">
+                    <p class="text-muted text-center">هیچ دسته‌بندی برای نمایش موجود نیست.</p>
+                </div>
+            {% endfor %}
+                {% for tag in tags %}
+        
+                <a href="{% url 'books:books-tags' tag.slug %}">{{tag.title}}</a>
+            {% empty %}
+                <div class="col-12">
+                    <p class="text-muted text-center">هیچ تگی برای نمایش موجود نیست.</p>
+                </div>
+            {% endfor %}
+        </div>
+        </div>{% endblock %}

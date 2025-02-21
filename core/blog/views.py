@@ -6,7 +6,7 @@ from .models import Post,Category,Tags,CategorySEO,TagsSEO,PostSEO
 
 def postcategory(request, slug):
     category = get_object_or_404(Category, slug=slug)  # Retrieve the category object based on the slug
-    posts = Post.objects.filter(categories=category)  # Filter posts based on the category object
+    posts = Post.objects.filter(category=category)  # Filter posts based on the category object
 
     seo = CategorySEO.objects.filter(Category_seo=category).first()
 

@@ -1,0 +1,286 @@
+.work-area {
+    position: relative;
+    z-index: 1;
+
+    .shape {
+        @include absolute(top 0 left 0);
+        z-index: -1;
+    }
+
+    .shape2 {
+        @include absolute(bottom 0 right 0);
+        z-index: -1;
+    }
+}
+
+.work-left-content {
+    position: relative;
+    z-index: 1;
+
+    @include xl {
+        margin-top: 54px;
+    }
+
+    .work-image {
+        text-align: center;
+
+        :nth-child(1) {
+            width: 60%;
+            @include relative(top 30px left 0);
+            z-index: 1;
+
+            @include md {
+                left: 55px;
+                width: auto;
+            }
+
+            @include lg {
+                top: 0;
+            }
+        }
+
+        :nth-child(2) {
+            @include relative(top 0 right -65px);
+            width: 60%;
+
+            @include md {
+                top: 100px;
+                width: auto;
+            }
+
+            @include xl {
+                right: 0;
+            }
+        }
+
+        :nth-child(3) {
+            @include absolute(top 165px left 0);
+            width: 60%;
+
+            @include md {
+                top: 150px;
+                width: auto;
+            }
+
+            @include xl {
+                top: 160px;
+                left: 36px;
+            }
+        }
+    }
+
+    .dots {
+        @include absolute(top 0 left 0);
+        z-index: -1;
+
+        @include xl {
+            left: 75px;
+        }
+    }
+
+    .dots2 {
+        @include absolute(bottom -10% right 23%);
+        z-index: -1;
+
+        @include xl {
+            bottom: -160px;
+            right: 28%;
+        }
+    }
+}
+
+.work-right-content {
+    margin-top: 70px;
+
+    @include md {
+        margin-top: 200px;
+    }
+
+    @include lg {
+        margin-top: 150px;
+    }
+
+    .work-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+        z-index: 1;
+        padding: 20px 15px;
+        border-radius: 10px;
+        max-width: 480px;
+        @include property;
+
+        @include md {
+            gap: 30px;
+            padding: 25px 25px;
+        }
+
+        @include pseudo(top 50%, left 25px) {
+            transform: translateY(-50%);
+            @include circle-size(50px);
+            background: #FFFFFF;
+            box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+            z-index: -1;
+            @include property;
+
+            @include md {
+                @include circle-size(90px);
+            }
+        }
+
+        @include hover {
+            @include before {
+                @include size(100%);
+                border-radius: 10px;
+                top: 0;
+                left: 0;
+                transform: translateY(0);
+            }
+        }
+
+        .work-icon {
+            @include circle-size(60px);
+            background: #FFFFFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+            flex: 0 0 auto;
+
+            svg {
+                --icon-size: 30px;
+                line-height: 30px;
+            }
+
+            @include md {
+                @include circle-size(90px);
+            }
+        }
+
+        .work-item-content {
+            h4 {
+                font-family: $ibm;
+                font-size: 16px;
+                font-weight: 600;
+
+                @include md {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+
+            p {
+                line-height: 1.5;
+                font-size: 14px;
+                margin-bottom: 0;
+
+                @include md {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.current-work-area {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 250px;
+
+    .shape {
+        @include absolute(bottom 0 left 0);
+        z-index: -1;
+    }
+
+    .shape2 {
+        @include absolute(bottom 0 right 0);
+        z-index: -1;
+    }
+}
+
+.current-work-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 40px;
+    margin: 65px auto 0;
+    max-width: 300px;
+
+    @include sm {
+        max-width: 400px;
+    }
+
+    @include lg {
+        margin-top: 40px;
+    }
+
+    h4 {
+        font-family: $ibm;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--clr-black);
+        @include absolute(left 0);
+        z-index: 2;
+        transform: rotate(-90deg) translate(-58%, 10px);
+        transform-origin: 0 0;
+
+        @include md {
+            transform: rotate(-90deg) translate(-56%, 45px);
+        }
+
+        @include lg {
+            transform: rotate(-90deg) translate(-56%, 10px);
+        }
+
+        @include lg {
+            transform: rotate(-90deg) translate(-56%, 35px);
+        }
+    }
+
+    .current-work-img {
+        max-width: 250px;
+        max-height: 290px;
+        position: relative;
+        z-index: 1;
+        margin-left: auto;
+        margin-top: -8px;
+
+        @include xl {
+            max-width: 320px;
+            max-height: 370px;
+        }
+
+        @include pseudo(top -40px left -45px) {
+            @include size(100%, 130%);
+            max-width: 320px;
+            max-height: 370px;
+            background: var(--white_100);
+            z-index: -1;
+
+            @include xl {
+                left: -60px;
+            }
+
+        }
+
+        img {
+            width: 100%;
+            transition: 0.5s;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.current-work-area {
+    .col-md-4 {
+        &:first-child {
+            .current-work-item {
+                margin-top: 0;
+            }
+        }
+    }
+}

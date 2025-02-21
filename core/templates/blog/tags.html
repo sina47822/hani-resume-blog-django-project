@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load cache %}
+
+{% block header %}
+    <title>{{ SITE_NAME }} | {{ SITE_DESCRIPTION }}</title>
+    <meta name="description" content="{{ SITE_SEO_DESCRIPTION }}"/>
+    <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="og:title" content="{{ SITE_NAME }}"/>
+    <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+    <meta property="og:url" content="{{ SITE_BASE_URL }}"/>
+    <meta property="og:site_name" content="{{ SITE_NAME }}"/>
+{% endblock %}
+
+{% block content %}
+    <h1>blog tag</h1>
+{% endblock %}

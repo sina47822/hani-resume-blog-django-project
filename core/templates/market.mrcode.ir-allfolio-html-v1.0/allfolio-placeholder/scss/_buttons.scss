@@ -1,0 +1,241 @@
+.theme-btn {
+  //50px
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-family: $ibm;
+  border-radius: 5px;
+  background: var(--brand_color);
+  display: inline-block;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.18s ease-in-out;
+  border: 1px solid var(--brand_color);
+
+  &:hover {
+    background-color: #eb3a17;
+    border-color: #eb3a17;
+    color: $white;
+
+    i:not(.left-icon) {
+      transform: translateX(4px);
+    }
+  }
+
+  &.btn-small {
+    //36px
+    padding: 6px 20px;
+  }
+
+  &.btn-small-two {
+    //40px
+    padding: 5px 10px;
+  }
+
+  &.btn-big {
+    //55px
+    padding: 12.5px 30px;
+  }
+
+  &.btn-big-two {
+    //70px
+    padding: 20px 25px;
+  }
+
+  &.theme-btn-outline {
+    border-color: var(--black_50);
+    border-radius: 5px;
+    background-color: transparent;
+    color: #17161a;
+
+    &.btn-outline-black {
+      border-color: var(--black_200);
+    }
+
+    &:hover {
+      background-color: var(--black_800);
+      color: #fff;
+    }
+  }
+
+  &.theme-btn-outline-white {
+    border-color: rgba(249, 249, 249, 0.26);
+    border-radius: 5px;
+    background-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: #17161A;
+      border-color: $white;
+    }
+  }
+
+  i {
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 5px;
+  }
+
+  &.theme-btn-alt {
+    background-color: #fff;
+    color: $brand_color;
+    border-color: #fff;
+
+    &:hover {
+      background-color: $brand_color;
+      color: #fff;
+      border-color: $brand_color;
+    }
+  }
+}
+
+.btn {
+  --btn-py: 12px;
+  --btn-px: 30px;
+  --btn-radius: 5px;
+  --btn-bw: 1px;
+  --btn-bs: solid;
+
+  @include btn();
+  text-transform: uppercase;
+
+  @include hover {
+    color: var(--btn-clr);
+  }
+
+  &-white {
+    @include btn-color(
+                    $white,
+                    $brand_color,
+            $h-bg: $brand_color,
+            $h-color: $white,
+            $h-border-color: $brand_color,
+            $f-color: #fff
+    );
+  }
+
+  &-white-100 {
+    @include btn-color(
+                    var(--white_100),
+                    $black_900,
+                    #ccccce,
+            $h-bg: $brand_color,
+            $h-color: $white,
+            $h-border-color: transparent,
+            $f-color: #e62f0b
+    );
+  }
+
+  &-black {
+    @include btn-color(
+                    #000000,
+                    $white,
+            $h-bg: $brand_color,
+            $h-color: $white,
+            $h-border-color: $brand_color,
+            $f-color: #fff
+    );
+  }
+
+  &-red {
+    @include btn-color(
+                    linear-gradient(180deg, #e62f0b 0%, #bf2f13 100%),
+                    $white,
+                    $brand_color,
+            $h-color: $white,
+            $h-bg: linear-gradient(180deg, #e23e1d 0%, #c54329 100%),
+            $h-border-color: $brand_color
+    );
+  }
+
+  &-outline-black {
+    @include btn-outline(
+                    $black_900,
+                    $brand_color,
+                    transparent,
+            $h-border-color: $brand_color,
+            $f-color: #17161a
+    );
+  }
+
+  &-outline-white {
+    @include btn-outline($white, $brand_color, $f-color: #fff);
+  }
+
+  &-outline-red {
+    @include btn-outline(
+                    $brand_color,
+                    $white,
+                    linear-gradient(180deg, #e62f0b 0%, #bf2f13 100%),
+            $border-color: var(--black_50),
+            $h-border-color: #{$brand_color},
+            $f-color: #fff
+    );
+  }
+}
+
+.theme-btn-2 {
+  color: #17161a;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  border-bottom: 1px solid $brand_color;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+
+  @include pseudo(bottom 0 left 0) {
+    @include size(100%, 1px);
+    background: $brand_color;
+    @include property;
+    z-index: -1;
+  }
+
+  @include hover {
+    border-color: transparent;
+    color: $white;
+    @include before {
+      height: 100%;
+    }
+  }
+}
+
+.line-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 16px;
+  font-family: var(--ibm);
+  color: var(--white);
+  position: relative;
+  z-index: 2;
+  padding-top: 3px;
+
+  i {
+    margin-left: 10px;
+  }
+
+  &:hover::before {
+    height: 100%;
+  }
+
+  &::before {
+    content: "";
+    bottom: -2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--brand_color);
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    z-index: -1;
+  }
+}

@@ -29,15 +29,15 @@ class IndexView(View):
         return render(request, self.template_name, context)
 # About Us View
 def aboutus(request):
-    return render(request, 'about-us.html')
+    return render(request, 'website/about-us.html')
 
 # Contact Us View
 def contactus(request):
-    return render(request, 'contact-us.html')
+    return render(request, 'website/contact-us.html')
 
 # Resume View
 def resume(request):
-    return render(request, 'resume.html')
+    return render(request, 'website/resume.html')
 
 def TermsAndCondition(request):
     return render (request , 'website/termandcondition.html')

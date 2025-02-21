@@ -1,0 +1,14 @@
+.counter-section {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 40px;
+
+    .counter-item {
+        sub {
+            color: $brand_color;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: $ibm;
+        }
+    }
+}

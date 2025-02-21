@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #my apps
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig',
+    'books.apps.BooksConfig',
     'account.apps.AccountConfig',
     'dashboard.apps.DashboardConfig',
     'comment.apps.CommentConfig',

@@ -2,9 +2,9 @@
 {% load static %}
 {% load i18n %}
 {% load cache %}
-{% block header %}
 
-    <title>Contact Us</title>
+{% block header %}
+    <title>{% translate "تماس با ما" %}</title>
     <meta name="description" content="{{ SITE_SEO_DESCRIPTION }}"/>
     <meta name="keywords" content="{{ SITE_KEYWORDS }}"/>
     <meta property="og:type" content="blog"/>
@@ -13,7 +13,198 @@
     <meta property="og:url" content="{{ SITE_BASE_URL }}"/>
     <meta property="og:site_name" content="{{ SITE_NAME }}"/>
 {% endblock %}
+
 {% block content %}
-    <h1>Contact Us</h1>
-    <p>This is the Contact Us page content.</p>
+<div class="body_wrapper">
+    <section class="contact-area-2 position-relative pt-lg-100 pt-55 pb-100"
+    style=`background-image: url({% static 'img/contact/banner-bg.png' %}) no-repeat center center background-size: cover;`>
+    <div class="container">
+    <div class="row pt-90">
+        <div class=" col-lg-9 doc_banner_content text-center mx-auto">
+        <h2 class="text-white">{% translate "با ما در تماس باشید" %} <span class="banner-title-h1 mb-2">{% translate "تماس با ما" %}</span></h2>
+        <p>{% translate "من هانی ادیب آزاد هستم و اینجا هستم تا به شما کمک کنم. مکان‌های دفتر ما و راه‌های مختلف تماس با ما را قرارداده ام تا بتوانیم پشتیبانی مورد نیاز شما را ارائه دهیم." %}</p>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <section class="contact_area sec_pad">
+    <div class="container">
+    <div class="contact_info">
+        <div class="section_title text-start">
+        <h2 class="h_title wow fadeInUp">{% translate "بیایید مکالمه را شروع کنیم" %}</h2>
+        <p>{% translate "لطفاً به ما ایمیل بزنید، خوشحال می‌شویم که به شما کمک کنیم." %}</p>
+        </div>
+        <form action="#" class="contact_form">
+        <div class="form-group">
+            <h6>{% translate "چه نوع پروژه‌ای نیاز دارید؟" %}</h6>
+            <div class="box_info">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Checkone">
+                <label class="form-check-label" for="Checkone">{% translate "طراحی وب" %}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Checktwo">
+                <label class="form-check-label" for="Checktwo">{% translate "داشبورد" %}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Checkthree">
+                <label class="form-check-label" for="Checkthree">{% translate "اپلیکیشن موبایل" %}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Checkfour">
+                <label class="form-check-label" for="Checkfour">{% translate "موکاپ" %}</label>
+            </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <h6>{% translate "محدوده بودجه" %}</h6>
+            <div class="box_info">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="budgetOne" value="option1">
+                <label class="form-check-label" for="budgetOne">{% translate "$۱۰۰۰" %}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="budgetTwo" value="option2">
+                <label class="form-check-label" for="budgetTwo">{% translate "$۲۰۰۰" %}</label>
+            </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <h6>{% translate "مهلت تحویل" %}</h6>
+            <div class="box_info">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="weekOne" value="1">
+                <label class="form-check-label" for="weekOne">{% translate "۱ هفته" %}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="weekTwo" value="2">
+                <label class="form-check-label" for="weekTwo">{% translate "۲ هفته" %}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="weekTwo" value="2">
+                <label class="form-check-label" for="weekTwo">{% translate "۳ هفته" %}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="weekTwo" value="2">
+                <label class="form-check-label" for="weekTwo">{% translate "۴ هفته" %}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="weekTwo" value="2">
+                <label class="form-check-label" for="weekTwo">{% translate "۵ هفته" %}</label>
+            </div>
+            </div>
+        </div>
+        <div class="row contact_fill">
+            <div class="col-lg-4 form-group">
+            <h6>{% translate "نام کامل" %}</h6>
+            <input type="text" class="form-control" name="name" id="name" placeholder="{% translate 'نام خود را وارد کنید' %}">
+            </div>
+            <div class="col-lg-4 form-group">
+            <h6>{% translate "ایمیل" %}</h6>
+            <input type="email" class="form-control" name="email" id="email" placeholder="info@example.com">
+            </div>
+            <div class="col-lg-4 form-group">
+            <h6>{% translate "شماره تلفن" %}</h6>
+            <input type="tel" class="form-control" name="tel" id="phone" placeholder="+۹۸ ...">
+            </div>
+            <div class="col-lg-12 form-group">
+            <h6>{% translate "پیام" %}</h6>
+            <textarea class="form-control message" id="message" placeholder="{% translate 'پیام خود را وارد کنید...' %}"></textarea>
+            </div>
+            <div class="col-lg-12 form-group">
+            <button type="submit" class="theme-btn btn-big">{% translate "ارسال پیام" %}</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+    </section>
+
+        <!-- Support Area -->
+        <section class="contact-area-3">
+            <div class="contact-map">
+                <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-6 col-lg-8 ms-auto">
+                        <div class="contact-form wow fadeInLeft" data-wow-delay="0.4s">
+                            <h3 class="contat-title mb-20">{% translate "تماس. با ما در تماس باشید" %}</h3>
+                            <p class="mb-35">{% translate "برای ما پیغام بگذارید" %}</p>
+                            <form action="contact_process.php" method="post" id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">{% translate "نام *" %}</label>
+                                        <div class="input-group">
+                                            <i class="input-icon las la-user"></i>
+                                            <input class="form-control" type="text" id="name" name="name"
+                                                placeholder="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">{% translate "ایمیل *" %}</label>
+                                        <div class="input-group">
+                                            <i class="input-icon las la-envelope-open"></i>
+                                            <input class="form-control" type="email" id="email" name="email"
+                                                placeholder="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">{% translate "پیام" %}</label>
+                                        <textarea class="form-control" id="message" name="message"
+                                            rows="5">{% translate "نام شما" %}</textarea>
+                                    </div>
+                                </div>
+                                <button><i class="las la-paper-plane mr-10"></i>{% translate "ارسال پیام" %}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Support Area -->
+
+        <!-- Support Area -->
+        <section class="support-area pt-lg-120 pb-lg-130 pt-80 pb-70 wow fadeInUp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-85">
+                        <h2 class="support-area-title">{% translate "پشتیبانی سریع" %}</h2>
+                        <p class="support-area-subtitle">{% translate "شما می‌توانید تمام اطلاعات تماس را دریافت کنید." %}</p>
+                    </div>
+                    <div class="col-lg-3 col-md-4 offset-lg-1">
+                        <div class="support-item">
+                            <img class="support-icon" src="{% static 'img/contact/map-icon.svg' %}" alt="">
+                            <p class="support-title sub-regular-2 mt-25 mb-40">{% translate "ما را ملاقات کنید" %}</p>
+                            <p class="support-text">{% translate "۹۸ خیابان اصلی، بروکلین، ایالات متحده" %}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 offset-lg-1">
+                        <div class="support-item">
+                            <img class="support-icon" src="{% static 'img/contact/phone-icon.svg' %}" alt="">
+                            <p class="support-title sub-regular-2 mt-25 mb-40">{% translate "با ما تماس بگیرید" %}</p>
+                            <a class="support-text d-block" href="tel:9666698821521">۹(۶۶۶) ۶۹۸-۸۲۱-۵۲۱</a>
+                            <a class="support-text d-block" href="tel:9666698821521">۹(۶۶۶) ۶۹۸-۸۲۱-۵۲۱</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 offset-lg-1">
+                        <div class="support-item">
+                            <img class="support-icon" src="{% static 'img/contact/envelope-icon.svg' %}" alt="">
+                            <p class="support-title sub-regular-2 mt-25 mb-40">{% translate "ایمیل بزنید" %}</p>
+                            <a class="support-text d-block" href="mailto:example@example.com">example@example.com</a>
+                            <a class="support-text d-block" href="mailto:example@example.com">example@example.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Support Area -->
+
+</div>
+
+
 {% endblock %}

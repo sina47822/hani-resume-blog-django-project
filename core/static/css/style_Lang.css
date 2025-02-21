@@ -33,7 +33,29 @@
     font-weight: normal;
     font-style: normal;
 }
-
+.w-80{
+    max-width: 80%;
+}
+.w-90{
+    max-width: 90%;
+}
+.w-70{
+    max-width: 70%;
+}
+@media (max-width: 700px) {
+    .m-w-80{
+        max-width: 80%;
+    }
+    .m-w-90{
+        max-width: 90%;
+    }
+    .m-w-70{
+        max-width: 70%;
+    }
+    .m-w-100{
+        max-width: 100%;
+    }
+}
 body *{
     font-family: "dana", sans-serif;
     --ibm: "dana"
@@ -60,10 +82,12 @@ body.farsi *{
     font-family: "IRANSans", sans-serif;
     direction: rtl;
 }
-div#mCSB_1_container {
-    direction: ltr;
+body.farsi p{
+    text-align: justify;
 }
-
+body.farsi input{
+    text-align: left;
+}
 .banner-content-typing h1 {
     font-size : 35px;
 }
@@ -78,7 +102,11 @@ body.arabi header {
     direction: rtl;
     text-align: right;
 }
-
+.dropdown-menu {
+    text-align: right !important;
+    left: auto !important;
+    right: 0 !important;
+  }
 /* استایل مخصوص زبان ترکی */
 body.turkey header {
     font-family: 'Arial', sans-serif;
