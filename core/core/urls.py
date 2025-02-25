@@ -41,7 +41,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('accounts/', include('account.urls')),
     path('comment/', include('comment.urls')),
-
+    path('api-auth/', include('rest_framework.urls')),
     path('api/users/', include('OTP.urls')),
     
     path('tinymce/', include('tinymce.urls')),

@@ -1,0 +1,344 @@
+.contact-area {
+  background: #f2f5d3;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  .shape-9 {
+    @include absolute(bottom 0 left 0);
+    width: auto;
+    padding-left: 0;
+    opacity: 0.1;
+    z-index: -1;
+  }
+}
+
+.contact-left-content {
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 50px;
+
+    @include md {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    @include xl {
+      font-size: 45px;
+    }
+
+    @include xxl {
+      font-size: 75px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    color: $p_color;
+  }
+
+  .social-link {
+    display: block;
+    margin-top: 10px;
+
+    @include md {
+      margin-top: 60px;
+    }
+  }
+}
+
+.social-link {
+  h5 {
+    font-family: $ibm;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: $black_900;
+
+    @include md {
+      margin-bottom: 10px;
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      color: $p_color;
+
+      @include hover {
+        color: $brand_color;
+        .fa-facebook-f {
+          color: #4267b2;
+        }
+        .fa-instagram {
+          color:  #E36C5A;
+        }
+        .fa-behance {
+          color: #053eff;
+        }
+        .fa-dribbble {
+          color: #ea4c89;
+        }
+      }
+    }
+  }
+}
+.active{
+  .contact-right-content {
+    animation: fadeInRight 0.6s linear 0.3s;
+  }
+}
+.contact-right-content {
+  margin-top: 10px;
+
+  @include md {
+    margin-top: 0;
+  }
+
+  h3 {
+    font-family: $ibm;
+    font-size: 24px;
+    font-weight: 500;
+    color: $black_900;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .contact-form {
+    .form-group {
+      margin-top: 10px;
+
+      @include md {
+        margin-top: 20px;
+      }
+    }
+
+    .form-control {
+      background: #fdffe5;
+      border-color: transparent;
+      color: $p_color;
+      font-size: 16px;
+      padding: 15px 30px;
+      border-radius: 5px;
+      &:focus::placeholder {
+        color: $black_700;
+      }
+    }
+  }
+
+  .contact-btn {
+    margin-top: 40px;
+
+    .theme-btn {
+      padding: 10px 30px;
+
+      i {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+.contact-info {
+  .contact-info-item {
+    flex: 0 0 auto;
+    width: 50%;
+
+    h5 {
+      font-family: $ibm;
+      font-size: 16px;
+      font-weight: 600;
+      color: $black_900;
+      margin-bottom: 0;
+      text-transform: capitalize;
+    }
+
+    a {
+      font-family: $ibm;
+      font-size: 16px;
+      text-decoration: none;
+      color: $p_color;
+
+      @include hover {
+        color: $brand_color;
+      }
+    }
+  }
+}
+
+.fullpage_section_five {
+  position: relative;
+  z-index: 1;
+
+  .shape21 {
+    @include absolute(top 10% left 0);
+    z-index: -1;
+
+    @include xl {
+      top: 15%;
+    }
+
+    @include xxl {
+      left: 45px;
+    }
+  }
+
+  .shape22 {
+    @include absolute(bottom 30px left 40%);
+    z-index: -1;
+
+    @include xxl {
+      bottom: 152px;
+    }
+  }
+
+  .contact-left-content {
+    span {
+      color: $white;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: $white;
+      margin-top: 0;
+
+      @include lg {
+        font-size: 48px;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  }
+
+  .contact-info-item {
+    margin-top: 20px;
+
+    @include lg {
+      margin-top: 40px;
+    }
+
+    h5 {
+      color: $white;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+
+  .social-link {
+    margin-top: 30px;
+
+    h5 {
+      color: $white;
+    }
+
+    a {
+      color: $white;
+      @include size(35px);
+      line-height: 30px;
+      border-radius: 50%;
+      border: 1px solid #ffffff47;
+      text-align: center;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover {
+        color: $brand_color;
+        border-color: $white;
+        background: $white;
+      }
+    }
+  }
+
+  .contact-right-content {
+    h3 {
+      color: $white;
+    }
+
+    .form-control {
+      padding-left: 30px;
+      background: rgba(#fff, 0.2);
+      border-color: #ffffff45;
+      color: $white;
+      border-radius: 5px;
+
+      &:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        &::placeholder {
+          color: $white;
+        }
+      }
+
+      &::placeholder {
+        color: $black_50;
+      }
+    }
+    textarea.form-control {
+      height: 130px;
+    }
+  }
+}
+
+.contact-area-2 {
+  background-color: #f0f0f0;
+
+  form {
+    padding: 0 18px;
+  }
+  .form-group {
+    margin-bottom: 18px;
+    .form-label {
+      font-family: $ibm;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 28px;
+      border-radius: 5px;
+
+      color: var(--black_900);
+    }
+    .form-control {
+      background-color: #fff;
+      padding: 20px;
+      border-color: #fff;
+      font-size: 14px;
+      line-height: 1;
+      color: var(--black_400);
+    }
+    .select {
+      width: 100%;
+      height: 60px;
+      line-height: 1.5;
+      .list {
+        width: 100%;
+      }
+    }
+    .theme-btn {
+      margin-top: 40px;
+      width: 100%;
+      padding: 15px 20px;
+    }
+  }
+}
