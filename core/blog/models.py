@@ -35,7 +35,7 @@ class Post(models.Model):
     
     class Meta: 
         ordering = ('-published_date', ) 
-        verbose_name = _('مقالات')
+        verbose_name = _('قلم من')
         verbose_name_plural = verbose_name
 
     def get_absolute_url(self):

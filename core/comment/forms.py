@@ -20,6 +20,6 @@ class SubmitReviewForm(forms.ModelForm):
             try:
                 Post.objects.get(id=post.id)
             except Post.DoesNotExist:
-                raise forms.ValidationError("این مقاله وجود ندارد")
+                raise forms.ValidationError("این قلم من وجود ندارد")
 
             return cleaned_data

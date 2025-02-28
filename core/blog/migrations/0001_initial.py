@@ -60,8 +60,8 @@ class Migration(migrations.Migration):
                 ('tags', models.ManyToManyField(to='blog.tags')),
             ],
             options={
-                'verbose_name': 'مقالات',
-                'verbose_name_plural': 'مقالات',
+                'verbose_name': 'قلم من',
+                'verbose_name_plural': 'قلم من',
                 'ordering': ('-published_date',),
             },
         ),
