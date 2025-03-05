@@ -64,14 +64,14 @@ class BooksDetailView(View):
         # Retrieve the books books by primary key (pk)
         books = get_object_or_404(Books, slug =slug )
         seo = BooksSEO.objects.filter(books=books).first()  # Retrieve the first BooksSEO object associated with the books
-        books = Books.objects.all().order_by('-id')[:4]
+        books_related = Books.objects.all().order_by('-id')[:4]
         categories = Category.objects.all()
         tags = Tags.objects.all()
 
         context = { 'slug': slug,
                     'books' : books,
                     'seo' : seo,
-                    'books': books,
+                    'books_related': books_related,
                     'categories':categories,
                     'tags' : tags
                 }
