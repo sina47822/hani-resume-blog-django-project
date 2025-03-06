@@ -6,16 +6,28 @@ from .models import Books,Category,Tags,CategorySEO,TagsSEO,BooksSEO
 
 def bookscategory(request, slug):
     category = get_object_or_404(Category, slug=slug)  # Retrieve the category object based on the slug
-    books = Books.objects.filter(category=category)  # Filter books based on the category object
+    
+    child_categories = category.children.all()
+    all_categories = [category] + list(child_categories)
+
+    books = Books.objects.filter(category__in=all_categories)  # Filter books based on the category object
 
     seo = CategorySEO.objects.filter(Category_seo=category).first()
 
     paginator = Paginator(books, 8)  # Show 10 books per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    
+    categories = Category.objects.all()
+    tags = Tags.objects.all()
 
-    context = {'category': category, 'page_obj': page_obj, 'seo': seo, 'books' : books}
+
+    context = {'category': category,
+                'page_obj': page_obj,
+                'seo': seo,
+                'books' : books,
+                'categories':categories,
+                'tags':tags
+            }
 
     return render(request, 'books/category.html', context)
 
@@ -35,11 +47,20 @@ def bookstags(request, slug):
 class BooksListView(View):
     template_name = "books/books_list.html"
     
-    def get(self, request):
+    def get(self, request, category_slug=None, tag_slug=None):
         # Query all books books
         books = Books.objects.all()
         categories = Category.objects.all()
         tags = Tags.objects.all()
+        # فیلتر کردن بر اساس دسته‌بندی
+        if category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
+            books = books.filter(categories=category)
+
+        # فیلتر کردن بر اساس تگ
+        if tag_slug:
+            tag = get_object_or_404(Tags, slug=tag_slug)
+            books = books.filter(tags=tag)
 
         paginator = Paginator(books, 4)  # Show 10 books per page
         page_number = request.GET.get('page')
@@ -53,6 +74,8 @@ class BooksListView(View):
             'categories': categories,
             'tags': tags,
             'page_obj': page_obj,
+            'selected_category': category_slug,
+            'selected_tag': tag_slug,
         }
         return render(request, self.template_name, context)
 

@@ -38,19 +38,14 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <!-- {% if categories.exists %}
-                    <h3>Categories</h3>
-                    <ul>
-                        {% for category in categories %}
-                            <li><a href="{% url 'books:books-category' categories.slug %}">{{ category.name }}</a></li>
-                        {% endfor %}
-                    </ul>
-                {% endif %} -->
                 {% if tags %}
                     <h3>Tags</h3>
+                    {% for tag in tags %}
+                    <li><a href="{% url 'books:books_by_tag' tag.slug %}">{{ tag.title }}</a></li>
+                {% endfor %}
                 {% endif %}
                 {% if books %}
-                    <h3>Related Books</h3>
+                    <h3 class="pt-4">Related Books</h3>
                     <ul>
                         {% for book_related in books_related %}
                             <li><a href="{% url 'books:books_detail' book_related.slug %}">{{ book_related.title }}</a></li>

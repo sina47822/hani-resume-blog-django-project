@@ -21,51 +21,70 @@
             <div class="row align-items-center">
                 <!-- محتوای بنر (مثلاً عنوان خوش‌آمدگویی) -->
                 <div class="col-12 text-center justify-content-center">
-                    <h1 class="display-4" style="color: white;">{% translate "به بخش نکته و کتاب خوش آمدید" %}</h1>
-                    <p class="lead" style="color: #ccc;text-align: center;">{% translate "نکته ها و خلاصه کتاب را از دست ندهید در این قسمت سعی کرده ام مفیدترین بحش کتابهایی را که خوانده ام و آنها را ارزشمند دیدم با شما به اشتراک بگذارم." %}</p>
+                    <h1 class="display-4" style="color: white;">{{ books.title }}</h1>
+                    <p class="" style="color: rgb(233, 233, 233);">By {{ books.author }} | {{ books.published_date|date:"F d, Y" }} | Views: {{ books.total_views }}</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Books List Section -->
-    <div class="container mt-5">
-        <h1 class="mb-4 text-center">لیست کتابها</h1>
+    <div class="container mt-4">
         <div class="row">
-            {% for book in books %}
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ book.title }}</h5>
-                            <p class="card-text">{{ book.summary|safe }}</p>
-                            <!-- استفاده از متد get_absolute_url مدل برای لینک به جزئیات پست -->
-                            <a href="{% url 'books:books_detail' book.slug %}" class="btn btn-primary">ادامه مطلب</a>
+            <div class="col-12 col-lg-8">
+                <!-- فیلتر دسته‌بندی -->
+                <div class="d-flex justify-content-center mb-4">
+                    <strong>دسته‌بندی‌ها: </strong>
+                    {% for category in categories %}
+                        <a href="{% url 'books:books_by_category' category.slug %}" class="btn 
+                        {% if selected_category == category.slug %} btn-primary {% else %} btn-outline-primary {% endif %} mx-1">
+                            {{ category.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+
+                <!-- فیلتر برچسب -->
+                <div class="d-flex justify-content-center mb-4">
+                    <strong>برچسب‌ها: </strong>
+                    {% for tag in tags %}
+                        <a href="{% url 'books:books_by_tag' tag.slug %}" class="btn 
+                        {% if selected_tag == tag.slug %} btn-secondary {% else %} btn-outline-secondary {% endif %} mx-1">
+                            {{ tag.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+
+                <!-- لیست کتاب‌ها -->
+                <div class="row">
+                    {% for book in page_obj %}
+                        <div class="col-lg-4 col-12 col-sm-6">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ book.title }}</h5>
+                                    <p class="card-text">{{ book.summary|safe }}</p>
+                                    <a href="{% url 'books:books_detail' book.slug %}" class="btn btn-primary">ادامه مطلب</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    {% empty %}
+                        <div class="col-12">
+                            <p class="text-muted text-center">هیچ کتابی برای نمایش موجود نیست.</p>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% empty %}
-                <div class="col-12">
-                    <p class="text-muted text-center">هیچ پستی برای نمایش موجود نیست.</p>
+
+                <!-- صفحه‌بندی -->
+                <div class="d-flex justify-content-center mt-4">
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary mx-1">قبلی</a>
+                    {% endif %}
+
+                    <span class="btn btn-secondary mx-1">صفحه {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}</span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-secondary mx-1">بعدی</a>
+                    {% endif %}
                 </div>
-            {% endfor %}
-        </div>
-        <div class="d-flex align-items-center mx-auto justify-content-center">
-            {% for category in categories %}
-                <a href="{% url 'books:books-category' category.slug %}">{{category.title}}</a>
-            {% empty %}
-                <div class="col-12">
-                    <p class="text-muted text-center">هیچ دسته‌بندی برای نمایش موجود نیست.</p>
-                </div>
-            {% endfor %}
-                {% for tag in tags %}
-        
-                <a href="{% url 'books:books-tags' tag.slug %}">{{tag.title}}</a>
-            {% empty %}
-                <div class="col-12">
-                    <p class="text-muted text-center">هیچ تگی برای نمایش موجود نیست.</p>
-                </div>
-            {% endfor %}
+            </div>
         </div>
     </div>
-    
+                    
 {% endblock %}

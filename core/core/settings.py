@@ -173,7 +173,7 @@ ROSSETA_REQUIRES_SUPERUSER = True
 
 STATIC_URL = 'statics/'
 STATIC_ROOT = '/app/statics/'
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = '/app/media/'
 STATICFILES_DIRS = [
     BASE_DIR / '/app/statics/' ,
@@ -186,7 +186,7 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 COMPRESS_ENABLED = True
-COMPRESS_ROOT = '/app/static/'
+COMPRESS_ROOT = '/app/statics/'
 COMPRESS_OFFLINE = True
 
 
