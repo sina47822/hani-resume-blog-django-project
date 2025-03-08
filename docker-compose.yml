@@ -12,8 +12,7 @@ services:
 
     environment:
       - ALLOWED_HOSTS=haniadibazad.ir,www.haniadibazad.ir
-      - SECRET_KEY=test
-      - DEBUG=True
+      - DEBUG=False
     depends_on:
       - db
 

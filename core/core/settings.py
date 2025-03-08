@@ -171,12 +171,12 @@ ROSSETA_REQUIRES_SUPERUSER = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'statics/'
+STATIC_URL = '/static/'
 STATIC_ROOT = '/app/statics/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/app/media/'
 STATICFILES_DIRS = [
-    BASE_DIR / '/app/statics/' ,
+    '/app/statics/' ,
 ]
 
 STATICFILES_FINDERS = (
@@ -186,7 +186,7 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 COMPRESS_ENABLED = True
-COMPRESS_ROOT = '/app/statics/'
+COMPRESS_ROOT = '/app/static/'
 COMPRESS_OFFLINE = True
 
 

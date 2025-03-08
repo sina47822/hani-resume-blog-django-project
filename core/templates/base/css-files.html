@@ -1,7 +1,9 @@
 {% load static %}
+{% load compress %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-rtl.min.css' %}" media="all" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{% compress css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-rtl.min.css' %}" media="all" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/elegant-icons.min.css' %}" media="all" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/all.min.css' %}" media="all" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}" media="all" />
@@ -14,3 +16,4 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" media="all" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" media="all" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/style_Lang.css' %}" media="all" />
+{% endcompress %}
